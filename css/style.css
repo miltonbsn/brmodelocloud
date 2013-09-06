@@ -1,10 +1,177 @@
-/*
-* {
-  margin: 0;
-  padding: 0;
-}
-*/
-
 html {
   font-family: sans-serif;
+  box-shadow: inset 0px 250px 0px 0px rgba(60, 173, 113, 1.0);
 }
+
+.wrapper {padding: 50px;}
+
+header {
+  position: fixed;
+  top: 0;
+  left:0;
+  right:0;
+  box-sizing:border-box;
+  padding: 20px 60px;
+  z-index:50;
+}
+
+.logo {
+  float:left;
+  display:inline-block;
+}
+
+.logo img {display:inline-block;}
+
+.user {
+  width: 100px;
+  text-align: right;
+  background: #eee;
+  border: solid 1px #fff;
+  padding: 5px;
+  float: right;
+  position:relative;
+  z-index:100;
+}
+
+.user ul {
+  display:none;
+  padding: 5px 0 0 0;
+  border-top:solid 1px #ccc;
+  margin:0;
+}
+
+.user li {
+  list-style-type:none;
+  display:block;
+  width:100%;
+  padding: 2px 3px;
+  cursor:pointer;
+  box-sizing:border-box;
+}
+
+.user li:hover {background:#ddd;}
+.user:hover ul {display:block;}
+
+.user > a {
+  color: #999;
+  text-decoration:none;
+}
+
+.types {
+  float:right;
+  margin-top:50px;
+}
+
+.types li {
+  float:left;
+  list-style-type:none;
+  margin-left:30px;
+  cursor:pointer;
+}
+
+header > select {
+  float: right;
+  display:block;
+}
+
+.page,
+.page:after,
+.page:before {
+  border: solid 1px #b4b4b4;
+/*  box-shadow: -1px 1px 5px 1px #ccc;*/
+}
+
+.page {
+  background: #fff;
+  width: 100%;
+  height: 1060px;
+  box-sizing:border-box;
+  padding: 30px;
+  position:relative;
+}
+
+.page:after,
+.page:before {
+  content:'';
+  display:inline-block;
+  position:absolute;
+  width:100%;
+  height:100%;
+  z-index:-1;
+}
+
+.page:after {
+  background:#eee;
+  left:10px;
+  top:10px;
+}
+
+.page:before {
+ background:#ddd;
+  left:20px;
+  top:20px;
+}
+
+.tabs {
+  margin: 30px 0 0 5px;
+  display:inline-block;
+}
+
+.tabs a {
+  display:inline-block;
+  padding: 5px 10px;
+  background:#eee;
+  text-decoration:none;
+  color: #333;
+  position:relative;
+  padding:5px 30px;
+  border: solid 1px #fff;
+  margin:10px -5px;
+  color: #999;
+}
+
+.tabs a:after,
+.tabs a:before {
+  content: '';
+  display: inline-block;
+  position: absolute;
+  background: #eee;
+}
+
+.tabs a:after {
+  width: 19px;
+  height: 19px;
+  left: 100%;
+  top: 4px;
+  border: solid 1px #fff;
+  box-shadow: 1px -1px 0px 1px rgba(60, 173, 113, 1.0);
+  margin-left: -10px;
+  -webkit-transform: rotate(45deg);
+  z-index:1
+}
+
+.tabs a:before {
+  width: 15px;
+  height: 100%;
+  background: #eee;
+  right: 0;
+  top: 0;
+  z-index: 2;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
