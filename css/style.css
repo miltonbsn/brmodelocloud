@@ -3,10 +3,20 @@ html {
   box-shadow: inset 0px 250px 0px 0px rgba(60, 173, 113, 1.0);
 }
 
-.wrapper {padding: 50px;}
+html, body {
+    min-height: 100%;
+}
+
+.wrapper {
+  padding: 50px;
+  box-sizing:border-box;
+  min-height: 90%; 
+  position: relative;
+  overflow: hidden;
+}
 
 header {
-  position: fixed;
+  position: absolute;
   top: 0;
   left:0;
   right:0;
@@ -84,10 +94,11 @@ header > select {
 .page {
   background: #fff;
   width: 100%;
-  height: 1060px;
+  min-height: 800px;
   box-sizing:border-box;
   padding: 30px;
   position:relative;
+  display:block;
 }
 
 .page:after,
@@ -146,6 +157,7 @@ header > select {
   border: solid 1px #fff;
   box-shadow: 1px -1px 0px 1px rgba(60, 173, 113, 1.0);
   margin-left: -10px;
+  -moz-transform: rotate(45deg);
   -webkit-transform: rotate(45deg);
   z-index:1
 }
