@@ -1,37 +1,60 @@
+/* ==========================================================================
+   Basics
+   ========================================================================== */
+* {
+  position:relative;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
 html {
   font-family: sans-serif;
   box-shadow: inset 0px 250px 0px 0px rgba(60, 173, 113, 1.0);
 }
 
-html, body {
-    min-height: 100%;
-}
+html,
+body,
+.wrapper,
+.content,
+.page {height: 100%;}
 
 .wrapper {
   padding: 50px;
-  box-sizing:border-box;
-  min-height: 90%; 
-  position: relative;
+  min-height: 100%;
   overflow: hidden;
 }
 
+/* ==========================================================================
+   Header
+   ========================================================================== */
 header {
   position: absolute;
   top: 0;
   left:0;
   right:0;
-  box-sizing:border-box;
-  padding: 20px 60px;
+  padding: 20px 50px;
   z-index:50;
 }
 
+/* Logo
+   ========================================================================== */
 .logo {
   float:left;
   display:inline-block;
 }
 
 .logo img {display:inline-block;}
+/* Provisory Logo
+   ========================================================================== */
+.logo {
+  text-decoration:none;
+  color: rgba(38, 126, 73, 1.0);
+  font-size:2em;
+}
 
+/* User
+   ========================================================================== */
 .user {
   width: 100px;
   text-align: right;
@@ -39,9 +62,15 @@ header {
   border: solid 1px #fff;
   padding: 5px;
   float: right;
-  position:relative;
   z-index:100;
 }
+
+.user > a {
+  color: #999;
+  text-decoration:none;
+}
+
+.user:hover ul {display:block;}
 
 .user ul {
   display:none;
@@ -56,17 +85,15 @@ header {
   width:100%;
   padding: 2px 3px;
   cursor:pointer;
-  box-sizing:border-box;
 }
 
 .user li:hover {background:#ddd;}
-.user:hover ul {display:block;}
 
-.user > a {
-  color: #999;
-  text-decoration:none;
-}
-
+/* ==========================================================================
+   Body
+   ========================================================================== */
+/* Options
+   ========================================================================== */
 .types {
   float:right;
   margin-top:50px;
@@ -77,28 +104,23 @@ header {
   list-style-type:none;
   margin-left:30px;
   cursor:pointer;
+  color: rgba(38, 126, 73, 1.0);
 }
 
-header > select {
-  float: right;
+/* Pages
+   ========================================================================== */
+.page {
+  background: #fff;
+  width: 100%;
+  padding: 30px;
   display:block;
+  height:85%;
 }
 
 .page,
 .page:after,
 .page:before {
   border: solid 1px #b4b4b4;
-/*  box-shadow: -1px 1px 5px 1px #ccc;*/
-}
-
-.page {
-  background: #fff;
-  width: 100%;
-  min-height: 800px;
-  box-sizing:border-box;
-  padding: 30px;
-  position:relative;
-  display:block;
 }
 
 .page:after,
@@ -123,6 +145,8 @@ header > select {
   top:20px;
 }
 
+/* Tabs
+   ========================================================================== */
 .tabs {
   margin: 30px 0 0 5px;
   display:inline-block;
@@ -134,7 +158,6 @@ header > select {
   background:#eee;
   text-decoration:none;
   color: #333;
-  position:relative;
   padding:5px 30px;
   border: solid 1px #fff;
   margin:10px -5px;
@@ -170,13 +193,6 @@ header > select {
   top: 0;
   z-index: 2;
 }
-
-
-
-
-
-
-
 
 
 

@@ -1,4 +1,5 @@
 $(document).ready(function() {
+
 //  $('nav').on('click', 'a', function() {
 //    var hash = window.location.hash = $(this).attr('href').replace('.html','').replace('index','home');
 //    return false;
@@ -15,8 +16,5 @@ $(document).ready(function() {
 //  
 //  $(window).trigger('hashchange');
     
-    $("nav").on("click", function(){
-        $('.content').load('page-b.html .content');        
-    });
-    
+
 });
