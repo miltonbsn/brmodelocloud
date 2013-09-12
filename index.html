@@ -1,12 +1,16 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" ng-app>
   <head>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.0.8/angular.min.js"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+    <script src="js/script.js"></script>
+    <script src="js/main.js"></script>
     <meta charset="UTF-8">
     <title>BrModelo</title>
     <link rel="stylesheet" href="css/style.css">
   </head>
   <body>
-    <div class="wrapper">
+    <div class="wrapper" ng-controller="MainCtrl">
       <header>
         <a class="logo" href="index.html"><img src="img/#" alt="BrModelo" /></a>
         <div class="user">
@@ -20,14 +24,12 @@
           </ul>
         </div>
       </header>
-      <nav class="tabs">
-        <a href="page-a.html">Page A</a>
-        <a href="page-b.html">Page B</a>
-        <a href="page-c.html">Page C</a>
+      <nav class="tabs" ng-repeat="model in models">
+        <a>{{model.text}}</a>
       </nav>
       <ul class="types">
-        <li>+ Lógico</li>
-        <li>+ Conceitual</li>
+        <li ng-click="addModelLogico()">+ Lógico</li>
+        <li ng-click="addModelConceitual()">+ Conceitual</li>
         <li>+ Lista</li>
       </ul>
       <div class="content">
@@ -36,7 +38,5 @@
         </div> <!-- /#page -->
       </div> <!-- /#content -->
     </div> <!-- /.wrapper -->
-    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
-    <script src="js/script.js"></scriptsrc></script>
   </body>
 </html>
