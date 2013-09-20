@@ -1,0 +1,123 @@
+<!doctype html>
+<html lang="en" ng-app>
+  <head>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.0.8/angular.min.js"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+    <script src="js/script.js"></script>
+    <script src="js/joint.js"></script>
+    <script src="js/joint.shapes.erd.js"></script>
+    <script src="js/main.js"></script>
+    <meta charset="UTF-8">
+    <title>BrModelo</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/joint.css">  
+      
+  </head>
+  <body>
+    <div class="wrapper" ng-controller="MainCtrl">
+      <header>
+   <!-- <a class="logo" href="index.html"><img src="img/#" alt="BrModelo" /></a> -->
+        <a class="logo" href="index.html">BrModelo</a>
+        <div class="user">
+          <a href="#">User</a>
+          <ul class="files">
+            <li>File 1</li>
+            <li>File 2</li>
+            <li>File 3</li>
+            <li>File 4</li>
+            <li>File 5</li>
+          </ul>
+        </div>
+      </header>
+      <nav class="tabs" ng-repeat="model in models">
+        <a>{{model.text}}</a>
+      </nav>
+      <ul class="types">
+        <li ng-click="addModelLogico()">+ Lógico</li>
+        <li ng-click="addModelConceitual()">+ Conceitual</li>
+      </ul>
+      <div class="content" id="content">
+     
+          <div class="page" id="myholder"/>
+     
+      </div> <!-- /#content -->
+    </div> <!-- /.wrapper -->
+  </body>
+    
+          <script>
+        
+var graph = new joint.dia.Graph;
+
+var paper = new joint.dia.Paper({
+    el: $('#myholder'),
+    width: $("#content").width(),
+    height: $("#content").height(),
+    gridSize: 1,
+    model: graph
+});
+
+var erd = joint.shapes.erd;
+
+var element = function(elm, x, y, label) {
+    var cell = new elm({ position: { x: x, y: y }, attrs: { text: { text: label }}});
+    graph.addCell(cell);
+    return cell;
+};
+
+var link = function(elm1, elm2) {
+    var myLink = new erd.Line({ source: { id: elm1.id }, target: { id: elm2.id }});
+    graph.addCell(myLink);
+    return myLink;
+};
+
+var filial = element(erd.Entity, 90, 43, "FILIAL");          
+var possui = element(erd.IdentifyingRelationship, 345, 33, "possui");              
+var cliente = element(erd.Entity, 532, 45, "CLIENTE");    
+var isa = element(erd.ISA, 559, 151, "");              
+var pfisica = element(erd.Entity, 423, 254, "PESSOA FÍSICA");                  
+var pjuridica = element(erd.Entity, 653, 258, "PESSOA JURÍDICA");  
+              
+var nome = element(erd.Key, 713, -5, "código");
+var codcliente = element(erd.Normal, 711, 57, "cliente");  
+              
+var sexo = element(erd.Normal, 467, 335, "rg");
+var rg = element(erd.Normal, 326, 334, "cpf");  
+              
+var cnpj = element(erd.Normal, 783, 239, "cnpj");  
+    
+link(filial, possui).cardinality('1..1');              
+link(cliente, possui).cardinality('0..n'); 
+              
+link(cliente, isa);              
+link(pfisica, isa); 
+link(pjuridica, isa); 
+              
+link(cliente, nome);  
+link(cliente, codcliente);
+              
+link(pfisica, sexo);  
+link(pfisica, rg);
+              
+link(pjuridica, cnpj);
+              
+//var employee = element(erd.Entity, 100, 200, "Employee");
+//var paid = element(erd.IdentifyingRelationship, 350, 190, "gets paid");
+//var number = element(erd.Key, 0, 90, "number");
+//var nameEl = element(erd.Normal, 75, 30, "name");
+//var skills = element(erd.Multivalued, 150, 90, "skills");
+//var amount = element(erd.Derived, 440, 80, "amount");
+//var date = element(erd.Normal, 590, 80, "date");
+//
+//link(employee, paid).cardinality('1');
+//link(employee, number);
+//link(employee, nameEl);
+//link(employee, skills);
+//
+//link(wage, paid).cardinality('N');
+//link(wage, amount);
+//link(wage, date);
+              
+              
+           </script>
+    
+</html>

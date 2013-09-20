@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="en" ng-app>
+  <head>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.0.8/angular.min.js"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+    <script src="js/script.js"></script>
+    <script src="js/joint.js"></script>
+    <script src="js/main.js"></script>
+    <meta charset="UTF-8">
+    <title>BrModelo</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/joint.css">  
+    
+    <style>
+      .pagex {
+    width: 600 ;
+    height: 200 ;
+    }
+      
+    </style>  
+      
+  </head>
+  <body>
+    <div class="wrapper" ng-controller="MainCtrl">
+      <header>
+   <!-- <a class="logo" href="index.html"><img src="img/#" alt="BrModelo" /></a> -->
+        <a class="logo" href="index.html">BrModelo</a>
+        <div class="user">
+          <a href="#">User</a>
+          <ul class="files">
+            <li>File 1</li>
+            <li>File 2</li>
+            <li>File 3</li>
+            <li>File 4</li>
+            <li>File 5</li>
+          </ul>
+        </div>
+      </header>
+      <nav class="tabs" ng-repeat="model in models">
+        <a>{{model.text}}</a>
+      </nav>
+      <ul class="types">
+        <li ng-click="addModelLogico()">+ Lógico</li>
+        <li ng-click="addModelConceitual()">+ Conceitual</li>
+      </ul>
+    
+     
+          <div class="pagex" id="myholder"/>
+
+    </div> <!-- /.wrapper -->
+  </body>
+    
+          <script>
+        
+
+var graph = new joint.dia.Graph;
+
+var paper = new joint.dia.Paper({
+    el: $('#myholder'),
+    model: graph
+});
+
+var rect = new joint.shapes.basic.Rect({
+    position: { x: 100, y: 30 },
+    size: { width: 100, height: 30 },
+    attrs: { rect: { fill: 'greencontent-container' }, text: { text: 'my box', fill: 'white' } }
+});
+
+var rect2 = rect.clone();
+rect2.translate(300);
+
+var link = new joint.dia.Link({
+    source: { id: rect.id },
+    target: { id: rect2.id }
+});
+
+graph.addCells([rect, rect2, link]);
+ 
+           </script>
+    
+</html>
