@@ -1,0 +1,11 @@
+/*********************************************************************/
+/* Transitions :) */
+/*********************************************************************/
+.userInfo .options {transition: 0.3s width ease;}
+
+.modelList li a {transition: 0.5s background ease;}
+
+.visibleModel .viewMode,
+.visibleModel > footer {transition: 0.3s opacity ease; }
+
+.shareOptions {transition: 0.6s width ease;}
