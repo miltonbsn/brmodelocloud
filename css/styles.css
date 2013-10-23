@@ -1,0 +1,346 @@
+/*********************************************************************/
+/* Generic */
+/*********************************************************************/
+body {
+	background: url(../imgs/pixel_weave.png) repeat top left;
+	font-family: "Lato", sans-serif;
+	font-size: 10px;
+	line-height: 1.2em;
+	color: rgba(0,0,0, 0.8);
+	text-shadow: 1px 1px 0 rgba(255,255,255, 0.6);
+}
+
+a,
+a:visited {
+	color: rgba(166, 211, 117, 1);
+	text-decoration: none;
+}
+
+i > span {display: none;}
+
+/***********************************************************/
+/* .button */
+/***********************************************************/
+a.button {
+	position: relative;
+	display: inline-block;
+	padding: 8px 10px;
+	border: 1px solid rgba(0,0,0, 0.3);
+	border-radius: 2px;
+	font-size: 1.3em;
+	text-align: center;
+	box-shadow: 0 1px 1px rgba(0,0,0, 0.3);
+	color: rgba(0,0,0, 0.7);
+	text-shadow: 0 0 0 transparent;
+	background: rgba(255,255,255, 1);
+}
+
+.button:hover {
+	text-decoration: none;
+}
+
+.button:active,
+.button.active{
+	top: 1px;
+	box-shadow: 0 0 0 transparent;
+}
+
+/***********************************************************/
+/* .mainHeader */
+/***********************************************************/
+.mainHeader {
+	position: fixed;
+	top: 0;
+	right: 0;
+	left: 0;
+	height: 50px;
+	border-top: 1px solid rgba(255,255,255, 0.4);
+	background-color: #4d4e4e;
+	background-image: -webkit-gradient(linear, left top, left bottom, from(rgb(77, 78, 78)), to(rgb(44, 45, 46)));
+	background-image: -webkit-linear-gradient(top, rgb(77, 78, 78), rgb(44, 45, 46));
+	background-image: -moz-linear-gradient(top, rgb(77, 78, 78), rgb(44, 45, 46));
+	background-image: -o-linear-gradient(top, rgb(77, 78, 78), rgb(44, 45, 46));
+	background-image: -ms-linear-gradient(top, rgb(77, 78, 78), rgb(44, 45, 46));
+	background-image: linear-gradient(top, rgb(77, 78, 78), rgb(44, 45, 46));
+
+	box-shadow: 0 2px 3px rgba(0,0,0, 0.5);
+	color: rgba(255,255,255, 1);
+	text-shadow: 0 0 0 transparent;
+}
+
+.mainHeader h1 {
+	float: left;
+}
+
+.mainHeader h1 a {
+	display: block;
+	font-size: 2.5em;
+	line-height: 50px;
+	font-variant: small-caps;
+	padding: 0 15px;
+	border-right: 1px solid rgba(255,255,255, 0.3);
+	color: rgba(166, 211, 117, 0.8);
+}
+
+.mainHeader h1 a:hover {
+	text-decoration: none;
+	background-color: #2d2e2f;
+	background-image: -webkit-gradient(linear, left top, left bottom, from(rgb(45, 46, 47)), to(rgb(77, 78, 78)));
+	background-image: -webkit-linear-gradient(top, rgb(45, 46, 47), rgb(77, 78, 78));
+	background-image: -moz-linear-gradient(top, rgb(45, 46, 47), rgb(77, 78, 78));
+	background-image: -o-linear-gradient(top, rgb(45, 46, 47), rgb(77, 78, 78));
+	background-image: -ms-linear-gradient(top, rgb(45, 46, 47), rgb(77, 78, 78));
+	background-image: linear-gradient(top, rgb(45, 46, 47), rgb(77, 78, 78));
+	filter: progid:DXImageTransform.Microsoft.gradient(GradientType=0,StartColorStr='#2d2e2f', EndColorStr='#4d4e4e');
+}
+
+.mainHeader > nav a {
+	display: block;
+	float: left;
+	line-height: 49px;
+	font-size: 1.5em;
+	padding: 0 20px;
+	border-right: 1px solid rgba(255,255,255, 0.2);
+	color: rgba(255,255,255, 0.8);
+
+}
+
+.mainHeader > nav a:hover {
+	text-decoration: none;
+	background-color: #2d2e2f;
+	background-image: -webkit-gradient(linear, left top, left bottom, from(rgb(45, 46, 47)), to(rgb(77, 78, 78)));
+	background-image: -webkit-linear-gradient(top, rgb(45, 46, 47), rgb(77, 78, 78));
+	background-image: -moz-linear-gradient(top, rgb(45, 46, 47), rgb(77, 78, 78));
+	background-image: -o-linear-gradient(top, rgb(45, 46, 47), rgb(77, 78, 78));
+	background-image: -ms-linear-gradient(top, rgb(45, 46, 47), rgb(77, 78, 78));
+	background-image: linear-gradient(top, rgb(45, 46, 47), rgb(77, 78, 78));
+	filter: progid:DXImageTransform.Microsoft.gradient(GradientType=0,StartColorStr='#2d2e2f', EndColorStr='#4d4e4e');
+}
+
+.userInfo {
+	position: absolute;
+	right: 0;
+	top: 0;
+}
+
+.userInfo > img {
+	opacity: 0.8;
+	width: 50px;
+	height: 50px;
+	border-left: 1px solid rgba(255,255,255, 0.3);
+	cursor: pointer;
+}
+
+.userInfo > .options {
+	position: absolute;
+	top: 0;
+	right: 100%;
+	z-index: 10;
+	overflow: hidden;
+	width: 0;
+	background: rgba(255,255,255, 1);
+	border: 0px solid rgba(0,0,0, 0.3);
+	border-radius: 1px;
+	font-size: 1.2em;
+	box-shadow: 0 1px 2px rgba(0,0,0, 0.3);
+}
+
+.userInfo > .options a:first-child {padding-top: 10px;}
+.userInfo > .options a:last-child {padding-bottom: 10px;}
+
+.userInfo > .options a {
+	display: block;
+	padding: 10px;
+	border-bottom: 1px solid rgba(0,0,0, 0.1);
+	color: rgba(0, 0, 0, 0.7);
+}
+
+.userInfo > .options a:hover {
+	background: rgba(0,0,0, 0.05);
+	text-decoration: none;
+}
+
+.userInfo:hover > img {opacity: 1;}
+.userInfo:hover > .options {
+	width: 65px;
+	border-width: 1px;
+}
+
+/***********************************************************/
+/* .content */
+/***********************************************************/
+.content {
+	position: fixed;
+	top: 80px;
+	right: 30px;
+	bottom: 30px;
+	left: 30px;
+}
+
+/***********************************************************/
+/* .modelList */
+/***********************************************************/
+.modelList {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 150px;
+	margin-top: 15px;
+}
+
+.modelList li {
+	list-style: none;
+	margin-bottom: 7px;
+}
+
+.modelList li a {
+	display: block;
+	padding: 10px 10px;
+	overflow: hidden;
+	font-size: 1.3em;
+	line-height: 1.2em;
+	text-align: right;
+	color: rgba(0, 0, 0, 0.7);
+	border: 1px solid rgba(0,0,0, 0.2);
+	border-right-width: 0;
+	border-radius: 2px 0 0 2px;
+	background: rgba(255,255,255, 0.3);
+}
+
+.modelList li a:hover {
+	text-decoration: none;
+	background: rgba(255,255,255, 1);
+}
+
+.modelList .active a {
+	position: relative;
+	right: -8px;
+	padding-right: 16px;
+	z-index: 10;
+	background: rgba(255,255,255, 1);
+}
+
+.modelList .newModel {
+	display: inline-block;
+	float: right;
+}
+
+.modelList .newModel a {
+	font-size: 1.4em;
+	font-weight: bold;
+	text-align: center;
+}
+
+/***********************************************************/
+/* .visibleModel */
+/***********************************************************/
+.visibleModel {
+	position: absolute;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 150px;
+	overflow: hidden;
+	border: 1px solid rgba(0,0,0, 0.2);
+	border-radius: 2px;
+	background: rgba(255,255,255, 0.9);
+	box-shadow: 0 0 10px -5px rgba(0,0,0, 0.5) inset;
+}
+
+/********************************************/
+/* .visibleModel > header */
+/********************************************/
+.visibleModel > header {
+	position: absolute;
+	top: 0;
+	right: 0;
+	left: 0;
+	padding: 20px;
+}
+
+.visibleModel > header h2 {
+	display: none /*inline-block*/;
+	font-size: 2em;
+	line-height: 1em;
+	font-style: italic;
+
+}
+
+.visibleModel .viewMode {
+	position: absolute;
+	top: 15px;
+	right: 15px;
+	opacity: 0.3;
+}
+
+.visibleModel > header:hover .viewMode {opacity: 1;}
+.viewMode a {margin-left: 5px;}
+
+.viewMode .active,
+.viewMode a:active {box-shadow: 0 0 4px rgba(0,0,0, 0.2) inset;}
+
+/********************************************/
+/* .visibleModel > Footer */
+/********************************************/
+.visibleModel > footer {
+	position: absolute;
+	right: 0;
+	bottom: 0;
+	left: 0;
+
+	background-color: #ebebeb;
+	background-image: -webkit-gradient(linear, left top, left bottom, from(rgb(235, 235, 235)), to(rgb(193, 193, 193)));
+	background-image: -webkit-linear-gradient(top, rgb(235, 235, 235), rgb(193, 193, 193));
+	background-image: -moz-linear-gradient(top, rgb(235, 235, 235), rgb(193, 193, 193));
+	background-image: -o-linear-gradient(top, rgb(235, 235, 235), rgb(193, 193, 193));
+	background-image: -ms-linear-gradient(top, rgb(235, 235, 235), rgb(193, 193, 193));
+	background-image: linear-gradient(top, rgb(235, 235, 235), rgb(193, 193, 193));
+
+	box-shadow: 0 0px 3px rgba(0,0,0, 0.5);
+	opacity: 0.5;
+}
+
+.visibleModel > footer:hover {opacity: 0.8;}
+
+.modelElements li,
+.shareOptions li,
+.shareOptions > i {
+	list-style: none;
+	float: left;
+	width: 50px;
+	height: 40px;
+	overflow: hidden;
+	padding: 5px;
+	cursor: pointer;
+	border-right: 1px solid rgba(0,0,0, 0.2);
+	box-shadow: -1px 0 0 rgba(255,255,255, 0.3) inset;
+}
+
+.modelElements li:hover,
+.shareOptions li:hover {
+	background-color: #c1c1c1;
+	background-image: -webkit-gradient(linear, left top, left bottom, from(rgb(193, 193, 193)), to(rgb(235, 235, 235)));
+	background-image: -webkit-linear-gradient(top, rgb(193, 193, 193), rgb(235, 235, 235));
+	background-image: -moz-linear-gradient(top, rgb(193, 193, 193), rgb(235, 235, 235));
+	background-image: -o-linear-gradient(top, rgb(193, 193, 193), rgb(235, 235, 235));
+	background-image: -ms-linear-gradient(top, rgb(193, 193, 193), rgb(235, 235, 235));
+	background-image: linear-gradient(top, rgb(193, 193, 193), rgb(235, 235, 235));
+}
+
+.modelElements i,
+.shareOptions i {
+	display: block;
+	overflow: hidden;
+	text-align: center;
+	font-size: 2.5em;
+	line-height: 1.2em;
+}
+
+.shareOptions {
+	position: absolute;
+	top: 0;
+	right: 0;
+	width: 49px
+}
+
+.shareOptions:hover {width: 250px;}

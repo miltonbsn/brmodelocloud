@@ -1,0 +1,149 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN">
+<html>
+<head>
+<meta charset="UTF-8">
+<title>BrModelo</title>
+<link rel="stylesheet" href="css/reset.css">
+<link href="bootstrap/css/bootstrap.min.css" rel="stylesheet"
+	media="screen">
+
+<script src="http://code.jquery.com/jquery.js"></script>
+<script src="bootstrap/js/bootstrap.min.js"></script>
+
+
+<style type="text/css" media="screen">
+body {
+	font-family: sans-serif;
+	background-image: url(images/backgroundimg.png);
+	background-repeat: repeat;
+} /* Required for percentage heights below */
+.header {
+	width: 100%;
+	height: 50px;
+	top: 0;
+	right: 0;
+	bottom: auto;
+	left: 0;
+	padding: 10px 20px;
+	text-align: left;
+	background-image: url(images/headerimg6.png);
+	border-bottom: 1px solid rgba(255, 255, 255, 0.8);
+	box-shadow: 0 1px 3px rgba(0, 0, 0, 0.5);
+}
+
+.header h1 {
+	float: left;
+	margin-right: 30px;
+	font-weight: normal;
+	font-size: 2em;
+	line-height: 0.5em;
+	color: white;
+}
+
+#sidebar {
+	position: fixed;
+	width: 150px;
+	bottom: 0;
+	top: 7%;
+	right: auto;
+	/*       bottom: 100px; */
+	left: 0;
+}
+
+.content {
+	position: absolute;
+	top: 60px;
+	left: 150px;
+	right: 10px;
+	bottom: 3%;
+	background-color: green;
+}
+
+.page {
+	position: absolute;
+	background: #fff;
+	border: solid 1px #b4b4b4;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+}
+
+.footer {
+	position: fixed;
+	width: 100%;
+	height: 3%;
+	top: auto;
+	right: 0;
+	bottom: 0;
+	left: 0;
+}
+
+.dividerup{
+	height: 2px !important;
+	margin: 9px 1px;
+	overflow: hidden;
+	background-color: #e5e5e5;
+	border-bottom: 1px solid #fff;
+}
+
+.userOptions {
+	color: #fff;
+	display: block;
+	height: 35px;
+	float: right;
+	cursor: pointer;
+}
+
+/* .userOptions strong {
+	text-indent: -9999px;
+	background: url(images/config1.png) no-repeat center right;
+	display: block;
+	width: 100%;
+	height: 35px;
+	float: right;
+} */
+
+.userOptions ul {
+	display: none;
+}
+
+.userOptions:hover ul {
+	display: block;
+}
+
+/* .userOptions li:hover {
+	background: rgba(0, 0, 0, 0.1);
+} */
+
+
+
+</style>
+</head>
+<body>
+
+	<div class="header">
+		<h1>BrModelo</h1>
+
+		<div class="dropdown userOptions pull-right">
+			<img alt"" src="images/config1.png" class="dropdown-toggle " data-toggle="dropdown">
+			<ul class="dropdown-menu " role="menu" aria-labelledby="dLabel">
+				<li><a tabindex="-1" href="#">Criar conta</a></li>
+				<li><a tabindex="-1" href="#">Ver listas</a></li>
+				<li><a tabindex="-1" href="#">Ajuda</a></li>
+				<li class="divider dividerup"></li>
+				<li><a tabindex="-1" href="#">Sair</a></li>
+			</ul>
+		</div>
+
+	</div>
+
+	<div id="sidebar"></div>
+
+	<div class="content">
+		<div class="page"></div>
+	</div>
+
+	<div class="footer"></div>
+</body>
+</html>
