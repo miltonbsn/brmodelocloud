@@ -185,17 +185,17 @@ i > span {display: none;}
 	top: 0;
 	left: 0;
 	width: 150px;
+	padding-top: 46px;
 	margin-top: 15px;
 }
 
 .modelList li {
+	position: relative;
+	cursor: pointer;
 	list-style: none;
-	margin-bottom: 7px;
-}
-
-.modelList li a {
 	display: block;
 	padding: 10px 10px;
+	margin-bottom: 7px;
 	overflow: hidden;
 	font-size: 1.3em;
 	line-height: 1.2em;
@@ -207,12 +207,12 @@ i > span {display: none;}
 	background: rgba(255,255,255, 0.3);
 }
 
-.modelList li a:hover {
+.modelList li:hover {
 	text-decoration: none;
 	background: rgba(255,255,255, 1);
 }
 
-.modelList .active a {
+.modelList .active {
 	position: relative;
 	right: -8px;
 	padding-right: 16px;
@@ -221,14 +221,43 @@ i > span {display: none;}
 }
 
 .modelList .newModel {
-	display: inline-block;
-	float: right;
+	position: absolute;
+	top: 0;
+	right: 0;
+	width: 38px;
+	height: 38px;
+	overflow: hidden;
+	padding: 0;
 }
 
-.modelList .newModel a {
+.modelList .newModel:hover {
+	width: 115px;
+}
+
+.modelList .newModel > strong {
+	display: block;
+	float: left;
+	width: 38px;
+	height: 38px;
+	padding: 10px;
 	font-size: 1.4em;
 	font-weight: bold;
 	text-align: center;
+}
+
+.modelList .newModel > strong:hover {background: rgba(0,0,0, 0.1);}
+
+.modelList .newModel:hover > strong:first-child,
+.modelList .newModel:hover > strong:first-child:hover {
+	cursor: default;
+	background: transparent;
+}
+
+.modelList .newModel:hover > strong:first-child i,
+.modelList .newModel:hover > strong:first-child:hover i {opacity: 0.1;}
+
+.modelList .naming > input {
+	width: 130px;
 }
 
 /***********************************************************/
