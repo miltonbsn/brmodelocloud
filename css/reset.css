@@ -25,6 +25,7 @@ time, mark, audio, video {
     font-size:100%;
     vertical-align:baseline;
     background:transparent;
+    font-style: normal;
 }
 
 body {
@@ -118,7 +119,7 @@ input, select {
 .cf {zoom:1;}
 
 /*********************************************************************/
-/* Add by Astrea team */
+/* Add by Chimps */
 /*********************************************************************/
 hr {
 	display: block;
@@ -138,5 +139,4 @@ a:hover {text-decoration: underline;}
 	-webkit-box-sizing: border-box;
 	   -moz-box-sizing: border-box;
 	   		box-sizing: border-box;
-
 	}

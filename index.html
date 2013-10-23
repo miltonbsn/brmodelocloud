@@ -1,149 +1,242 @@
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN">
-<html>
+<!DOCTYPE html>
+<html lang="pt-br">
 <head>
-<meta charset="UTF-8">
-<title>BrModelo</title>
-<link rel="stylesheet" href="css/reset.css">
-<link href="bootstrap/css/bootstrap.min.css" rel="stylesheet"
-	media="screen">
+	<meta charset="utf-8" />
+	<title>BR Modelo</title>
 
-<script src="http://code.jquery.com/jquery.js"></script>
-<script src="bootstrap/js/bootstrap.min.js"></script>
+	<!-- CSS -->
+	<link rel="stylesheet" media="screen" href="css/reset.css">
+	<link rel="stylesheet" media="screen" href="css/styles.css">
+	<link rel="stylesheet" media="screen" href="css/effects.css">
+	<link rel="stylesheet" media="screen" href="css/joint.css">
+	<link rel="stylesheet" media="screen" href="css/fontAwesome/font-awesome.css">
+	
 
+	<!-- Scripts -->
+	<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+	<script type="text/javascript" src="resource/js/cssua.min.js"></script>
 
-<style type="text/css" media="screen">
-body {
-	font-family: sans-serif;
-	background-image: url(images/backgroundimg.png);
-	background-repeat: repeat;
-} /* Required for percentage heights below */
-.header {
-	width: 100%;
-	height: 50px;
-	top: 0;
-	right: 0;
-	bottom: auto;
-	left: 0;
-	padding: 10px 20px;
-	text-align: left;
-	background-image: url(images/headerimg6.png);
-	border-bottom: 1px solid rgba(255, 255, 255, 0.8);
-	box-shadow: 0 1px 3px rgba(0, 0, 0, 0.5);
-}
+	<!-- Web Fonts -->
+	<link href='http://fonts.googleapis.com/css?family=Lato:100,100italic,light,lightitalic,regular,regularitalic,bold,bolditalic,900,900italic' rel='stylesheet' type='text/css'>
 
-.header h1 {
-	float: left;
-	margin-right: 30px;
-	font-weight: normal;
-	font-size: 2em;
-	line-height: 0.5em;
-	color: white;
-}
+	<!-- iPhone -->
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	
+    <script src="js/joint.js"></script>
+    <script src="js/joint.shapes.erd.js"></script>
 
-#sidebar {
-	position: fixed;
-	width: 150px;
-	bottom: 0;
-	top: 7%;
-	right: auto;
-	/*       bottom: 100px; */
-	left: 0;
-}
-
-.content {
-	position: absolute;
-	top: 60px;
-	left: 150px;
-	right: 10px;
-	bottom: 3%;
-	background-color: green;
-}
-
-.page {
-	position: absolute;
-	background: #fff;
-	border: solid 1px #b4b4b4;
-	top: 0;
-	left: 0;
-	right: 0;
-	bottom: 0;
-}
-
-.footer {
-	position: fixed;
-	width: 100%;
-	height: 3%;
-	top: auto;
-	right: 0;
-	bottom: 0;
-	left: 0;
-}
-
-.dividerup{
-	height: 2px !important;
-	margin: 9px 1px;
-	overflow: hidden;
-	background-color: #e5e5e5;
-	border-bottom: 1px solid #fff;
-}
-
-.userOptions {
-	color: #fff;
-	display: block;
-	height: 35px;
-	float: right;
-	cursor: pointer;
-}
-
-/* .userOptions strong {
-	text-indent: -9999px;
-	background: url(images/config1.png) no-repeat center right;
-	display: block;
-	width: 100%;
-	height: 35px;
-	float: right;
-} */
-
-.userOptions ul {
-	display: none;
-}
-
-.userOptions:hover ul {
-	display: block;
-}
-
-/* .userOptions li:hover {
-	background: rgba(0, 0, 0, 0.1);
-} */
-
-
-
-</style>
+	<!--[if lte IE 8]>
+	<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+	<![endif]-->
 </head>
 <body>
+	<header class="mainHeader cf">
+		<h1><a href="#">BR Modelo</a></h1>
+		<nav>
+			<a href="#">Como Funciona</a>
+			<a href="#">Sobre</a>
+			<a href="#">Contato</a>
+		</nav>
+		<aside class="userInfo">
+			<img src="imgs/config1.png" alt="Milton" />
+			<div class="options">
+				<a href="#">Perfil</a>
+				<a href="#">Logout</a>
+			</div> <!-- End .options -->
+		</aside> <!-- End .userInfo -->
+	</header> <!-- End .mainHeader -->
 
-	<div class="header">
-		<h1>BrModelo</h1>
-
-		<div class="dropdown userOptions pull-right">
-			<img alt"" src="images/config1.png" class="dropdown-toggle " data-toggle="dropdown">
-			<ul class="dropdown-menu " role="menu" aria-labelledby="dLabel">
-				<li><a tabindex="-1" href="#">Criar conta</a></li>
-				<li><a tabindex="-1" href="#">Ver listas</a></li>
-				<li><a tabindex="-1" href="#">Ajuda</a></li>
-				<li class="divider dividerup"></li>
-				<li><a tabindex="-1" href="#">Sair</a></li>
+	<section class="content cf">
+		<nav class="modelList">
+			<ul>
+				<li><a href="#">Base de dados para AWS</a></li>
+				<li><a href="#">Banco genérico usando MySQL</a></li>
+				<li class="active"><a href="#">World domination project</a></li>
+				<li><a href="#">Mais alguma modelagem</a></li>
+				<li class="newModel"><a href="#"><i class="icon-plus"></i></a></li>
 			</ul>
-		</div>
-
-	</div>
-
-	<div id="sidebar"></div>
-
-	<div class="content">
-		<div class="page"></div>
-	</div>
-
-	<div class="footer"></div>
+		</nav>
+		<section class="visibleModel" id="content">
+			<header>
+				<h2>Nome do Model</h2>
+				<aside class="viewMode">
+					<a class="button active" href="#">Grafico</a>
+					<a class="button" href="#">Tabela</a>
+				</aside>
+			</header>
+			<div class="theModel" id="myholder"></div> <!-- End .theModel -->
+			<footer>
+				<ul class="modelElements cf">
+					<li id="entityclick"><img src="imgs/icon/rectangle.png"/></li>
+					<li id="relationclick"><img src="imgs/icon/rhombus.png"/></li>
+					<li id="atributoclick"><img src="imgs/icon/atributo.png"/></li>
+					<li id="atributochaveclick"><img src="imgs/icon/atributo_identificador.png"/></li>
+					<li id="lineclick"><img src="imgs/icon/connect.png"/></li>
+					<li id="lessclick"><img src="imgs/icon/less.png"/></li>
+					<li id="moreclick"><img src="imgs/icon/more.png"/></li>
+				</ul> <!-- End ul.modelElements -->
+				<aside class="shareOptions">
+					<i class="icon-share"><span>Compartilhar</span></i>
+					<ul>
+						<li><i class="icon-facebook"><span>Facebook</span></i></li>
+						<li><i class="icon-twitter"><span>Twitter</span></i></li>
+						<li><i class="icon-google-plus"><span>Email</span></i></li>
+						<li><i class="icon-envelope-alt"><span>Email</span></i></li>
+					</ul>
+				</aside>
+			</footer>
+		</section> <!-- End .visibleModel -->
+	</section> <!-- End .content -->
 </body>
+
+         <script>
+        
+
+         var graph = new joint.dia.Graph;
+
+         console.log($('#content').width());
+         console.log($('#content').height());
+         
+         var paper = new joint.dia.Paper({
+             el: $('#myholder'),
+             width: $('#content').width(),
+             height: $('#content').height(),
+             gridSize: 1,
+             model: graph
+         });
+
+         var erd = joint.shapes.erd;
+
+         var element = function(elm, x, y, label) {
+             var cell = new elm({ position: { x: x, y: y }, attrs: { text: { text: label }}});
+             
+             graph.addCell(cell);
+                          
+          		return cell;
+          
+             }; 
+
+         var link = function(elm1, elm2) {
+             var myLink = new erd.Line({ source: { id: elm1.id }, target: { id: elm2.id }});
+             graph.addCell(myLink);
+             return myLink;
+         };
+
+         var filial = element(erd.Entity, 90, 43, "FILIAL");       
+         
+         var possui = element(erd.IdentifyingRelationship, 345, 33, "possui");              
+         var cliente = element(erd.Entity, 532, 45, "CLIENTE");    
+         var isa = element(erd.ISA, 559, 151, "");              
+         var pfisica = element(erd.Entity, 423, 254, "PESSOA FÍSICA");                  
+         var pjuridica = element(erd.Entity, 653, 258, "PESSOA JURÍDICA");  
+                       
+         var nome = element(erd.Key, 713, 30, "código");
+         var codcliente = element(erd.Normal, 711, 57, "cliente");  
+                       
+         var sexo = element(erd.Normal, 467, 335, "rg");
+         var rg = element(erd.Normal, 326, 334, "cpf");  
+                       
+         var cnpj = element(erd.Normal, 783, 239, "cnpj");  
+             
+         link(filial, possui).cardinality('1..1');              
+         link(cliente, possui).cardinality('0..n'); 
+                       
+         link(cliente, isa);              
+         link(pfisica, isa); 
+         link(pjuridica, isa); 
+                       
+         link(cliente, nome);  
+         link(cliente, codcliente);
+                       
+         link(pfisica, sexo);  
+         link(pfisica, rg);
+                       
+         link(pjuridica, cnpj);
+         
+         $("#entityclick").click(function() {
+        	 element(erd.Entity, 50, 350, "ENTIDADE");
+         });
+         
+         $("#relationclick").click(function() {
+        	 element(erd.IdentifyingRelationship, 50, 350, "Relacionamento");
+         });
+
+         $("#atributoclick").click(function() {
+        	 element(erd.Normal, 50, 350, "ENTIDADE");
+         });
+         
+         $("#atributochaveclick").click(function() {
+        	 element(erd.Key, 50, 350, "ENTIDADE");
+         });
+         
+         $("#lineclick").click(function() {
+ 
+        	 var link;
+
+        	 link = new joint.dia.Link({
+        	   source: {
+        	     x: 50,
+        	     y: 500
+        	   },
+        	   target: {
+        	     x: 50,
+        	     y: 350
+        	   },
+        	   attrs: {}
+        	 });
+
+        	 link.attr({
+        	   ".connection": {
+        	     stroke: "black"
+        	   }
+        	 });
+        	 
+        	 
+        	 graph.addCell(link);
+        	 
+         });
+         
+         var x = 1;
+         
+         $("#lessclick").click(function() {
+        	 x = x - 0.1;
+        	 paper.scale(x, x);
+        	 
+         });
+         
+         $("#moreclick").click(function() {
+        	 x = x + 0.1;
+        	 paper.scale(x, x);
+         });
+         
+         this.paper.on( "cell:pointerdown", function( cellview, evt, x, y)  {
+        	 
+        	 console.log(evt.originalEvent.altKey);
+        	 
+        	 if(evt.originalEvent.altKey == true){
+        		 
+        		   if(cellview.model.attributes.attrs.rect.fill == 'blue'){
+                  	 cellview.model.attributes.attrs.rect.fill = 'white'; 
+                   } else {
+                  	 cellview.model.attributes.attrs.rect.fill = 'blue'
+                   }
+
+                   var jsonString = JSON.stringify(graph.toJSON());
+                	
+                   graph.clear();
+                   
+                   graph.fromJSON(JSON.parse(jsonString));
+        		 
+        	 }
+        	 
+/*           console.log( "pointer down on cell ", cellview.model.id, " pos: ", x , ",", y);
+             
+             
+             
+           */
+             
+         });
+         
+           </script>
+
 </html>
