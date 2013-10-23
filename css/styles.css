@@ -292,30 +292,44 @@ i > span {display: none;}
 	font-size: 2em;
 	line-height: 1em;
 	font-style: italic;
-
 }
 
+.visibleModel .tools,
 .visibleModel .zoom {
 	position: absolute;
 	top: 15px;
-	right: 15px;
-	opacity: 0.3;
+	background: rgba(255,255,255, 0.95);
 }
 
-.visibleModel > header:hover .zoom {opacity: 1;}
+.visibleModel .tools {left: 15px;}
+.visibleModel .zoom {right: 15px;}
 
+.tools span,
 .zoom span {
 	display: block;
 	margin-bottom: 10px;
 	cursor: pointer;
+	opacity: 0.5;
+	
+	background-color: #ebebeb;
+	background-image: -webkit-gradient(linear, left top, left bottom, from(rgb(235, 235, 235)), to(rgb(193, 193, 193)));
+	background-image: -webkit-linear-gradient(top, rgb(235, 235, 235), rgb(193, 193, 193));
+	background-image: -moz-linear-gradient(top, rgb(235, 235, 235), rgb(193, 193, 193));
+	background-image: -o-linear-gradient(top, rgb(235, 235, 235), rgb(193, 193, 193));
+	background-image: -ms-linear-gradient(top, rgb(235, 235, 235), rgb(193, 193, 193));
+	background-image: linear-gradient(top, rgb(235, 235, 235), rgb(193, 193, 193));
 }
 
-.zoom span > i {
-	font-size: 1.5em;;
-}
-.zoom span:hover {background: rgba(0,0,0, 0.1);
-}
+.visibleModel .tools:hover span,
+.visibleModel .zoom:hover span {opacity: 1;}
 
+.tools span > img {width: 20px; height: 20px;}
+.zoom span > i {font-size: 1.5em;}
+
+.tools span:hover,
+.zoom span:hover {background: rgba(0,0,0, 0.1);}
+
+.tools span:hover,
 .zoom span:active {box-shadow: 0 0 4px rgba(0,0,0, 0.2) inset;}
 
 /********************************************/
