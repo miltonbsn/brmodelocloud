@@ -21,7 +21,7 @@ i > span {display: none;}
 /***********************************************************/
 /* .button */
 /***********************************************************/
-a.button {
+.button {
 	position: relative;
 	display: inline-block;
 	padding: 8px 10px;
@@ -266,18 +266,28 @@ a.button {
 
 }
 
-.visibleModel .viewMode {
+.visibleModel .zoom {
 	position: absolute;
 	top: 15px;
 	right: 15px;
 	opacity: 0.3;
 }
 
-.visibleModel > header:hover .viewMode {opacity: 1;}
-.viewMode a {margin-left: 5px;}
+.visibleModel > header:hover .zoom {opacity: 1;}
 
-.viewMode .active,
-.viewMode a:active {box-shadow: 0 0 4px rgba(0,0,0, 0.2) inset;}
+.zoom span {
+	display: block;
+	margin-bottom: 10px;
+	cursor: pointer;
+}
+
+.zoom span > i {
+	font-size: 1.5em;;
+}
+.zoom span:hover {background: rgba(0,0,0, 0.1);
+}
+
+.zoom span:active {box-shadow: 0 0 4px rgba(0,0,0, 0.2) inset;}
 
 /********************************************/
 /* .visibleModel > Footer */
