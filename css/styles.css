@@ -171,7 +171,7 @@ i > span {display: none;}
 /***********************************************************/
 .content {
 	position: fixed;
-	top: 100px;
+	top: 70px;
 	right: 30px;
 	bottom: 30px;
 	left: 30px;
@@ -181,30 +181,31 @@ i > span {display: none;}
 /* .modelList */
 /***********************************************************/
 .modelList {
+    position:relative;
+	left: 155px;
 
-	position: absolute;
-	top: 0;
-	left: 150px;
-	overflow: hidden;
-	top: 0;
-	left: 150px;
-	width: 150px;
-	padding-top: 5px;
-	margin-top: -40px;
+    overflow:hidden;
+}
 
+.modelList ul{
+    list-style-type: none;
 }
 
 .modelList li {
+    float: left;
 	position: relative;
+    width:150px;
+    overflow: hidden;
+    height:36px;
 	cursor: pointer;
-	list-style: none;
-	display: block;
-	padding: 10px 10px;
-	margin-bottom: 7px;
-	overflow: hidden;
+	padding: 10px;
+	margin-right: 7px;
 	font-size: 1.3em;
 	line-height: 1.2em;
 	text-align: left;
+	overflow: hidden;
+    white-space:nowrap;
+    text-overflow:ellipsis;
 	color: rgba(0, 0, 0, 0.7);
 	border: 1px solid rgba(0,0,0, 0.2);
 	border-bottom: 0;
@@ -218,10 +219,10 @@ i > span {display: none;}
 }
 
 .modelList .active {
-	position: relative;
-	right: -8px;
-	padding-right: 16px;
-	z-index: 10;
+	top: 4px;
+    height:40px;
+	padding-bottom: 16px;
+	z-index: 100;
 	background: rgba(255,255,255, 1);
 }
 
@@ -270,7 +271,7 @@ i > span {display: none;}
 /***********************************************************/
 .visibleModel {
 	position: absolute;
-	top: 0;
+	top: 36px;
 	right: 0;
 	bottom: 0;
 	left: 150px;
