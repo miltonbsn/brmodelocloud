@@ -171,7 +171,7 @@ i > span {display: none;}
 /***********************************************************/
 .content {
 	position: fixed;
-	top: 80px;
+	top: 100px;
 	right: 30px;
 	bottom: 30px;
 	left: 30px;
@@ -181,12 +181,17 @@ i > span {display: none;}
 /* .modelList */
 /***********************************************************/
 .modelList {
+
 	position: absolute;
 	top: 0;
-	left: 0;
+	left: 150px;
+	overflow: hidden;
+	top: 0;
+	left: 150px;
 	width: 150px;
-	padding-top: 46px;
-	margin-top: 15px;
+	padding-top: 5px;
+	margin-top: -40px;
+
 }
 
 .modelList li {
@@ -199,10 +204,10 @@ i > span {display: none;}
 	overflow: hidden;
 	font-size: 1.3em;
 	line-height: 1.2em;
-	text-align: right;
+	text-align: left;
 	color: rgba(0, 0, 0, 0.7);
 	border: 1px solid rgba(0,0,0, 0.2);
-	border-right-width: 0;
+	border-bottom: 0;
 	border-radius: 2px 0 0 2px;
 	background: rgba(255,255,255, 0.3);
 }
