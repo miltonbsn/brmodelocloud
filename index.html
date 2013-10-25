@@ -54,34 +54,38 @@
 					<strong>C</strong>
 					<strong>L</strong>
 				</li><!-- End .newModel -->
-				<li class="naming"><input type="text" name="" value="" /></li>
-				<li>Base de dados para AWS</li>
-				<li>Banco genérico usando MySQL</li>
-				<li class="active">World domination project</li>
-				<li>Mais alguma modelagem</li>
+<!--				<li class="naming"><input type="text" name="" value="" /></li>-->
+				<li class="active">Base de dados para AWS</li>
+<!--				<li>Banco genérico usando MySQL</li>-->
+<!--				<li class="active">World domination project</li>-->
+<!--				<li>Mais alguma modelagem</li>-->
 			</ul>
 		</nav>
 		<section class="visibleModel" id="content">
 			<header>
 				<h2>Nome do Model</h2>
 				<aside class="tools">
-					<span class="button"><img src="imgs/icon/rectangle.png"/></span>
-					<span class="button"><img src="imgs/icon/rhombus.png"/></span>
-					<span class="button"><img src="imgs/icon/atributo.png"/></span>
-					<span class="button"><img src="imgs/icon/atributo_identificador.png"/></span>
-					<span class="button"><img src="imgs/icon/connect.png"/></span>
+
 				</aside><!-- End .tools -->
 				<aside class="zoom">
-					<span class="button"><i class="fa fa-search-plus"></i></span>
-					<span class="button"><i class="fa fa-search-minus"></i></span>
+					<span id="moreclick" class="button"><i class="fa fa-search-plus"></i></span>
+					<span id="lessclick" class="button"><i class="fa fa-search-minus"></i></span>
 				</aside>
 			</header>
 			<div class="theModel" id="myholder"></div> <!-- End .theModel -->
 			<footer>
 				<ul class="modelElements cf">
-					<li id="entityclick"><i class="fa fa-save"></i></li>
+					<li id="entityclick"><img src="imgs/icon/rectangle.png"/></li>
+					<li id="relationclick"><img src="imgs/icon/rhombus.png"/></li>
+					<li id="atributoclick"><img src="imgs/icon/atributo.png"/></li>
+					<li id="atributochaveclick"><img src="imgs/icon/atributo_identificador.png"/></li>
+					<li id="lineclick"><img src="imgs/icon/connect.png"/></li>
+					
+					
+		
 				</ul> <!-- End ul.modelElements -->
 				<aside class="shareOptions">
+                    <li><i class="fa fa-save"></i></li>
 					<i class="fa fa-share-square-o"><span>Compartilhar</span></i>
 					<ul>
 						<li><i class="fa fa-facebook"><span>Facebook</span></i></li>
@@ -130,7 +134,10 @@
 
          var filial = element(erd.Entity, 90, 43, "FILIAL");       
          
-         var possui = element(erd.IdentifyingRelationship, 345, 33, "possui");              
+         var possui = element(erd.IdentifyingRelationship, 345, 33, "possui");  
+           
+        var possui = element(erd.Relationship, 300, 33, "possui");      
+           
          var cliente = element(erd.Entity, 532, 45, "CLIENTE");    
          var isa = element(erd.ISA, 559, 151, "");              
          var pfisica = element(erd.Entity, 423, 254, "PESSOA FÍSICA");                  
@@ -164,7 +171,7 @@
          });
          
          $("#relationclick").click(function() {
-        	 element(erd.IdentifyingRelationship, 50, 350, "Relacionamento");
+        	 element(erd.Relationship, 50, 350, "Relacionamento");
          });
 
          $("#atributoclick").click(function() {
@@ -177,32 +184,34 @@
          
          $("#lineclick").click(function() {
  
-        	 var link;
-
-        	 link = new joint.dia.Link({
-        	   source: {
-        	     x: 50,
-        	     y: 500
-        	   },
-        	   target: {
-        	     x: 50,
-        	     y: 350
-        	   },
-        	   attrs: {}
-        	 });
-
-        	 link.attr({
-        	   ".connection": {
-        	     stroke: "black"
-        	   }
-        	 });
-        	 
-        	 
-        	 graph.addCell(link);
+//        	 var link;
+//
+//        	 link = new joint.dia.Link({
+//        	   source: {
+//        	     x: 50,
+//        	     y: 500
+//        	   },
+//        	   target: {
+//        	     x: 50,
+//        	     y: 350
+//        	   },
+//        	   attrs: {}
+//        	 });
+//
+//        	 link.attr({
+//        	   ".connection": {
+//        	     stroke: "black"
+//        	   }
+//        	 });
+//        	 
+//        	 
+//        	 graph.addCell(link);
+             link(list[0], list[1]);
         	 
          });
          
          var x = 1;
+        var list = new Array();  
          
          $("#lessclick").click(function() {
         	 x = x - 0.1;
@@ -215,32 +224,33 @@
         	 paper.scale(x, x);
          });
          
+           
          this.paper.on( "cell:pointerdown", function( cellview, evt, x, y)  {
-        	 
-        	 console.log(evt.originalEvent.altKey);
+        	
+           var option = cellview.model.attributes.attrs['.outer'].fill;
+           
+        	 console.log(cellview);
         	 
         	 if(evt.originalEvent.altKey == true){
         		 
-        		   if(cellview.model.attributes.attrs.rect.fill == 'blue'){
-                  	 cellview.model.attributes.attrs.rect.fill = 'white'; 
+        		   if(cellview.model.attributes.attrs['.outer'].fill == 'blue'){
+                  	 cellview.model.attributes.attrs['.outer'].fill = 'white'; 
                    } else {
-                  	 cellview.model.attributes.attrs.rect.fill = 'blue'
+                     
+                     list.push(graph.getCell(cellview.model.attributes.id));                     
+                  	 cellview.model.attributes.attrs['.outer'].fill = 'blue';
                    }
 
-                   var jsonString = JSON.stringify(graph.toJSON());
-                	
-                   graph.clear();
-                   
-                   graph.fromJSON(JSON.parse(jsonString));
+               cellview.update();
+               
+//                   var jsonString = JSON.stringify(graph.toJSON());
+//                	
+//                   graph.clear();
+//                   
+//                   graph.fromJSON(JSON.parse(jsonString));
         		 
         	 }
         	 
-/*           console.log( "pointer down on cell ", cellview.model.id, " pos: ", x , ",", y);
-             
-             
-             
-           */
-             
          });
          
            </script>

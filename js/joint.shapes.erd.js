@@ -14,10 +14,10 @@ joint.shapes.erd.Entity = joint.dia.Element.extend({
     defaults: joint.util.deepSupplement({
 
         type: 'erd.Entity',
-        size: { width: 150, height: 60 },
+        size: { width: 85, height: 45 },
         attrs: {
             '.outer': {
-                fill: '#2ECC71', stroke: '#27AE60', 'stroke-width': 2,
+                fill: 'white', stroke: '#27AE60', 'stroke-width': 2,
                 points: '100,0 100,60 0,60 0,0'
             },
             '.inner': {
@@ -27,9 +27,10 @@ joint.shapes.erd.Entity = joint.dia.Element.extend({
             },
             text: {
                 text: 'Entity',
-                'font-family': 'Arial', 'font-size': 14,
+                'font-family': 'Arial', 'font-size': 8,
                 ref: '.outer', 'ref-x': .5, 'ref-y': .5,
-                'x-alignment': 'middle', 'y-alignment': 'middle'
+                'x-alignment': 'middle', 'y-alignment': 'middle',
+                fill: 'black'
             }
         }
 
@@ -57,20 +58,20 @@ joint.shapes.erd.Relationship = joint.dia.Element.extend({
     defaults: joint.util.deepSupplement({
 
         type: 'erd.Relationship',
-        size: { width: 80, height: 80 },
+        size: { width: 60, height: 60 },
         attrs: {
             '.outer': {
-                fill: '#3498DB', stroke: '#2980B9', 'stroke-width': 2,
+                fill: 'white', stroke: '#2980B9', 'stroke-width': 2,
                 points: '40,0 80,40 40,80 0,40'
             },
             '.inner': {
-                fill: '#3498DB', stroke: '#2980B9', 'stroke-width': 2,
+                fill: 'white', stroke: '#2980B9', 'stroke-width': 2,
                 points: '40,5 75,40 40,75 5,40',
                 display: 'none'
             },
             text: {
                 text: 'Relationship',
-                'font-family': 'Arial', 'font-size': 12,
+                'font-family': 'Arial', 'font-size': 8,
                 ref: '.', 'ref-x': .5, 'ref-y': .5,
                 'x-alignment': 'middle', 'y-alignment': 'middle'
             }
@@ -93,38 +94,45 @@ joint.shapes.erd.IdentifyingRelationship = joint.shapes.erd.Relationship.extend(
     }, joint.shapes.erd.Relationship.prototype.defaults)
 });
 
-joint.shapes.erd.Attribute = joint.dia.Element.extend({
+joint.shapes.erd.Attribute = joint.dia.Element
+		.extend({
 
-    markup: '<g class="rotatable"><g class="scalable"><ellipse class="outer"/><ellipse class="inner"/></g><text/></g>',
+			markup : '<g class="rotatablex"><g class="scalable"><ellipse class="outer"/><ellipse class="inner"/></g><text/></g>',
 
-    defaults: joint.util.deepSupplement({
+			defaults : joint.util.deepSupplement({
+                
+				type : 'erd.Attribute',
+				size : {
+					width : 15,
+					height : 15
+				},
+				attrs : {
+					'ellipse' : {
+						stroke : 'black',
+						'stroke-width' : 1,
+						transform : 'translate(0, 15)',
+						opacity : .6
+					},
+					'.outer' : {
+						cy : 0,
+						rx : 30,
+						ry : 15,
+						fill : 'white'              
+					},
+					'.inner' : {
+						cx : 10, cy : 25, rx : 45, ry : 20,
+						fill : 'black',
+						display : 'none'
+					},
+					text : {
+                        'ref-x': 12, 'ref-y': 14,
+                        'y-alignment': 'bottom'
+					}
+				}
 
-        type: 'erd.Attribute',
-        size: { width: 100, height: 50 },
-        attrs: {
-            'ellipse': {
-                transform: 'translate(50, 25)'
-            },
-            '.outer': {
-                stroke: '#D35400', 'stroke-width': 2,
-                cx: 0, cy: 0, rx: 50, ry: 25,
-                fill: '#E67E22'
-            },
-            '.inner': {
-                stroke: '#D35400', 'stroke-width': 2,
-                cx: 0, cy: 0, rx: 45, ry: 20,
-                fill: 'transparent', display: 'none'
-            },
-            text: {
-                 'font-family': 'Arial', 'font-size': 14,
-                 ref: '.', 'ref-x': .5, 'ref-y': .5,
-                 'x-alignment': 'middle', 'y-alignment': 'middle'
-             }
-         }
+			}, joint.dia.Element.prototype.defaults)
 
-     }, joint.dia.Element.prototype.defaults)
-
- });
+		});
 
  joint.shapes.erd.Multivalued = joint.shapes.erd.Attribute.extend({
 
@@ -160,7 +168,10 @@ joint.shapes.erd.Attribute = joint.dia.Element.extend({
          type: 'erd.Key',
 
          attrs: {
-             ellipse: { 'stroke-width': 4 },
+             ellipse: { 'stroke-width': 2 },
+           	 '.outer' : {
+						fill : 'black'              
+					},
              text: { text: 'key', 'font-weight': 'bold', 'text-decoration': 'underline' }
          }
      }, joint.shapes.erd.Attribute.prototype.defaults)
@@ -188,12 +199,11 @@ joint.shapes.erd.ISA = joint.dia.Element.extend({
         attrs: {
             polygon: {
                 points: '0,0 50,50 100,0',
-                fill: '#F1C40F', stroke: '#F39C12', 'stroke-width': 2
+                fill: 'white', stroke: '#F39C12', 'stroke-width': 2
             },
             text: {
                 text: 'ISA',
-                ref: '.', 'ref-x': .5, 'ref-y': .3,
-                'x-alignment': 'middle', 'y-alignment': 'middle'
+                ref: '.', 'ref-x': .5, 'ref-y': .3, 'x-alignment': 'middle', 'y-alignment': 'middle'
             }
         }
 

@@ -311,13 +311,7 @@ i > span {display: none;}
 	cursor: pointer;
 	opacity: 0.5;
 	
-	background-color: #ebebeb;
-	background-image: -webkit-gradient(linear, left top, left bottom, from(rgb(235, 235, 235)), to(rgb(193, 193, 193)));
-	background-image: -webkit-linear-gradient(top, rgb(235, 235, 235), rgb(193, 193, 193));
-	background-image: -moz-linear-gradient(top, rgb(235, 235, 235), rgb(193, 193, 193));
-	background-image: -o-linear-gradient(top, rgb(235, 235, 235), rgb(193, 193, 193));
-	background-image: -ms-linear-gradient(top, rgb(235, 235, 235), rgb(193, 193, 193));
-	background-image: linear-gradient(top, rgb(235, 235, 235), rgb(193, 193, 193));
+
 }
 
 .visibleModel .tools:hover span,
