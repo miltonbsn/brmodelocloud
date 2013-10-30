@@ -61,11 +61,11 @@ joint.shapes.erd.Relationship = joint.dia.Element.extend({
         size: { width: 60, height: 60 },
         attrs: {
             '.outer': {
-                fill: 'white', stroke: '#2980B9', 'stroke-width': 2,
+                fill: 'white', stroke: '#948989', 'stroke-width': 2,
                 points: '40,0 80,40 40,80 0,40'
             },
             '.inner': {
-                fill: 'white', stroke: '#2980B9', 'stroke-width': 2,
+                fill: 'white', stroke: 'black', 'stroke-width': 2,
                 points: '40,5 75,40 40,75 5,40',
                 display: 'none'
             },
@@ -195,11 +195,11 @@ joint.shapes.erd.ISA = joint.dia.Element.extend({
     defaults: joint.util.deepSupplement({
 
         type: 'erd.ISA',
-        size: { width: 100, height: 50 },
+        size: { width: 75, height: 35 },
         attrs: {
             polygon: {
-                points: '0,0 50,50 100,0',
-                fill: 'white', stroke: '#F39C12', 'stroke-width': 2
+                points: '25,0 0,25 50,25',
+                fill: 'white', stroke: '#948989', 'stroke-width': 2
             },
             text: {
                 text: 'ISA',
