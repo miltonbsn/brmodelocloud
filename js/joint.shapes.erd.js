@@ -190,16 +190,20 @@ joint.shapes.erd.Normal = joint.shapes.erd.Attribute.extend({
 
 joint.shapes.erd.ISA = joint.dia.Element.extend({
 
-    markup: '<g class="rotatable"><g class="scalable"><polygon/></g><text/></g>',
+    markup: '<g class="rotatable"><g class="scalable"><polygon class="outer"/></g><text/></g>',
 
     defaults: joint.util.deepSupplement({
 
         type: 'erd.ISA',
         size: { width: 75, height: 35 },
         attrs: {
-            polygon: {
+            'polygon': {
                 points: '25,0 0,25 50,25',
                 fill: 'white', stroke: '#948989', 'stroke-width': 2
+            },
+            '.outer' : {
+				fill : 'white',
+                stroke: '#948989'
             },
             text: {
                 text: 'ISA',
