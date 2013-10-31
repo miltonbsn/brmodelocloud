@@ -116,7 +116,7 @@ $(document).ready(function() {
         	         
         	console.log(evt);
         	 
-        	 if(evt.originalEvent.ctrlKey == true){
+        	 if(evt.originalEvent.ctrlKey == true || evt.originalEvent.altKey == true){
         		 
         		   if(cellview.model.attributes.attrs['.outer'].fill == 'white'){
                   	 cellview.model.attributes.attrs['.outer'].fill = cellview.model.attributes.attrs['.outer'].stroke; 
