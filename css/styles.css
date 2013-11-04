@@ -196,7 +196,6 @@ i > span {display: none;}
 .modelList {
     position:relative;
 	left: 155px;
-
     overflow:hidden;
 }
 
@@ -279,6 +278,81 @@ i > span {display: none;}
 .modelList .naming > input {
 	width: 130px;
 }
+
+
+/***********************************************************/
+/* .menuModel */
+/***********************************************************/
+.menuModel{
+	position: absolute;
+	top: 36px;
+	bottom: 0;
+	left: -8px;
+	overflow: hidden;
+	border: 1px solid rgba(0,0,0, 0.2);
+	border-radius: 2px;
+	background: rgba(255,255,255, 0.3);
+	box-shadow: 0 0 10px -5px rgba(0,0,0, 0.5) inset;
+    width: 140px;
+}  
+
+.menuModel .description {
+    float: left;
+	position: relative;
+    width:138px;
+    overflow: hidden;
+    height:36px;
+	padding: 10px;
+	margin-right: 7px;
+	font-size: 1.3em;
+	line-height: 1.2em;
+	text-align: center;
+	overflow: hidden;
+    white-space:nowrap;
+    text-overflow:ellipsis;
+	color: rgba(0, 0, 0, 0.7);
+	border-bottom: 1px solid rgba(0,0,0, 0.2);
+	border-radius: 2px 0 0 2px;
+	background: rgba(255,255,255, 0.3);
+}
+
+.menuModel .label {
+    float: left;
+	position: relative;
+    width:138px;
+    overflow: hidden;
+    height:36px;
+	padding: 10px;
+	margin-right: 7px;
+	font-size: 1.3em;
+	line-height: 1.2em;
+	text-align: left;
+	overflow: hidden;
+    white-space:nowrap;
+    text-overflow:ellipsis;
+	color: rgba(0, 0, 0, 0.7);
+}
+
+.menuModel input {
+    float: left;
+	position: relative;
+    width:138px;
+    overflow: hidden;
+    height:36px;
+	padding: 10px;
+	margin-right: 7px;
+	font-size: 1.3em;
+	line-height: 1.2em;
+	text-align: left;
+	overflow: hidden;
+    white-space:nowrap;
+    text-overflow:ellipsis;
+	color: rgba(0, 0, 0, 0.7);
+  	background-color: rgba(255,255,255, 0.5);
+    border: 0px; 
+  
+}
+
 
 /***********************************************************/
 /* .visibleModel */
