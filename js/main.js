@@ -114,8 +114,8 @@ $(document).ready(function () {
   });
 
   $("#nameInput").blur(function () {
-    list[0].model.attributes.attrs.text.text = $("#nameInput").val();
-    list[0].update();
+    list[list.length-1].model.attributes.attrs.text.text = $("#nameInput").val();
+    list[list.length-1].update();
   });
 
   paper.on("cell:pointerdown", function (cellview, evt, x, y) {
@@ -124,8 +124,7 @@ $(document).ready(function () {
         addSelection(list, cellview);
         $("#nameInput").val(cellview.model.attributes.attrs.text.text);
       } else {
-        cellview.model.attributes.attrs['.outer'].fill = 'white';
-        list.pop(cellview);
+        removeSelection(list,cellview, true);
       }
       cellview.update();
     }
@@ -135,33 +134,26 @@ $(document).ready(function () {
     if (listtoadd.length != 0) {
       if (listtoadd[0] == erd.Entity) {
         element(erd.Entity, x, y, "Entidade");
-      }
-      if (listtoadd[0] == erd.Relationship) {
+      } else if (listtoadd[0] == erd.Relationship) {
         element(erd.Relationship, x, y, "Relacionamento");
-      }
-      if (listtoadd[0] == erd.Normal) {
+      } else if (listtoadd[0] == erd.Normal) {
         element(erd.Normal, x, y, "Atributo");
-      }
-      if (listtoadd[0] == erd.Key) {
+      } else if (listtoadd[0] == erd.Key) {
         element(erd.Key, x, y, "chave");
-      }
-      if (listtoadd[0] == erd.ISA) {
+      } else if (listtoadd[0] == erd.ISA) {
         element(erd.ISA, x, y, "");
       }
       listtoadd.pop();
     }
-
-//    if (evt.originalEvent.ctrlKey == true || evt.originalEvent.altKey == true) {
       clearSelection(list);
-//    }
 
   });
 
 });
 
 function clearSelection(list) {
-  for (var i = 0; list.length; i = i + 1) {
-    removeSelection(list, list[i]);
+  for (var i = 0; i < list.length; i = i + 1) {
+    removeSelection(list, list[i], false);
   }
   list.clear();
 }
@@ -184,9 +176,17 @@ function addSelection(list, cellview) {
   cellview.update();
 }
 
-function removeSelection(list, cellview) {
+function removeSelection(list, cellview, toremove) {
   cellview.model.attributes.attrs['.outer'].fill = 'white';
   cellview.update();
+  if(toremove){
+      var index = list.indexOf(cellview);
+      if(index == 0){
+        list[0] = list[1] ;  
+      }      
+      list.pop();
+  }      
+  console.log(list);
 }
 
 function loaddbs(element, link) {
