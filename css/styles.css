@@ -195,7 +195,7 @@ i > span {display: none;}
 /***********************************************************/
 .modelList {
     position:relative;
-	left: 155px;
+	left: 8px;
     overflow:hidden;
 }
 
@@ -286,8 +286,7 @@ i > span {display: none;}
 .menuModel{
 	position: absolute;
 	top: 36px;
-	bottom: 0;
-	left: -8px;
+	right: 0;
 	overflow: hidden;
 	border: 1px solid rgba(0,0,0, 0.2);
 	border-radius: 2px;
@@ -360,9 +359,9 @@ i > span {display: none;}
 .visibleModel {
 	position: absolute;
 	top: 36px;
-	right: 0;
+	right: 160px;
 	bottom: 0;
-	left: 150px;
+	left: 0;
 	overflow: hidden;
 	border: 1px solid rgba(0,0,0, 0.2);
 	border-radius: 2px;
