@@ -54,6 +54,13 @@ $(document).ready(function () {
   };
 
   loaddbs(element, link);
+    
+  $("#newConceptual").click(function () {
+    var newelem = document.createElement('div');
+    newelem.innerHTML =  '<li class="activex">Base de dados </li>';
+    $("#models").prepend(newelem);
+  });  
+  
 
   $("#entityclick").click(function () {
     listtoadd[0] = erd.Entity;
