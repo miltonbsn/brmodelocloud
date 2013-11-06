@@ -56,9 +56,7 @@ $(document).ready(function () {
   loaddbs(element, link);
     
   $("#newConceptual").click(function () {
-    var newelem = document.createElement('div');
-    newelem.innerHTML =  '<li class="activex">Base de dados </li>';
-    $("#models").prepend(newelem);
+    $("#models").prepend('<li onclick="selectModel(this)">new </li>');
   });  
   
 
@@ -233,3 +231,11 @@ function loaddbs(element, link) {
   link(pjuridica, cnpj);
 
 }
+
+  function selectModel(x){
+      var models = $("#models").children();
+      for (var i = 0; i < models.length; i = i + 1) {
+          $(models[i]).removeClass("active");
+      }
+      $(x).addClass("active")
+  }
