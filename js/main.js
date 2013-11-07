@@ -172,6 +172,7 @@ function clearSelection(list) {
     removeSelection(list, list[i], false);
   }
   list.clear();
+  $("#nameInput").val("");
 }
 
 function addSelection(list, cellview) {
@@ -252,8 +253,10 @@ function loaddbs(element, link) {
           }      
       }
       $(x).addClass("active");
-      graph.clear();
-      graph.fromJSON(JSON.parse(dict[$(x).text()]));
       modelSelected = x;
       $("#nameInput").val($(x).text());
+      graph.clear();
+      if(dict[$(x).text()] != null){
+        graph.fromJSON(JSON.parse(dict[$(x).text()]));
+      }  
   }
