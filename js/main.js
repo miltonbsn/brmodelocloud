@@ -1,3 +1,7 @@
+var graph;
+var dict = {};
+var modelSelected = "";
+
 $(document).ready(function () {
 
   var x = 1;
@@ -9,7 +13,7 @@ $(document).ready(function () {
   var list = new Array();
   var listtoadd = new Array();
 
-  var graph = new joint.dia.Graph;
+  graph = new joint.dia.Graph;
 
   var paper = new joint.dia.Paper({
     el: $('#myholder'),
@@ -119,8 +123,15 @@ $(document).ready(function () {
   });
 
   $("#nameInput").blur(function () {
-    list[list.length-1].model.attributes.attrs.text.text = $("#nameInput").val();
-    list[list.length-1].update();
+    if(list.length != 0){
+        list[list.length-1].model.attributes.attrs.text.text = $("#nameInput").val();
+        list[list.length-1].update();
+    }    
+            
+    if(modelSelected != ""){        
+        $(modelSelected).text($("#nameInput").val());
+        text="";
+    }    
   });
 
   paper.on("cell:pointerdown", function (cellview, evt, x, y) {
@@ -235,7 +246,14 @@ function loaddbs(element, link) {
   function selectModel(x){
       var models = $("#models").children();
       for (var i = 0; i < models.length; i = i + 1) {
-          $(models[i]).removeClass("active");
+          if($(models[i]).hasClass("active")){
+                $(models[i]).removeClass("active");
+                dict[$(models[i]).text()] = JSON.stringify(graph);
+          }      
       }
-      $(x).addClass("active")
+      $(x).addClass("active");
+      graph.clear();
+      graph.fromJSON(JSON.parse(dict[$(x).text()]));
+      modelSelected = x;
+      $("#nameInput").val($(x).text());
   }
