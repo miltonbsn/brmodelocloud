@@ -4,166 +4,166 @@ var modelSelected = "";
 
 $(document).ready(function () {
 
-  var x = 1;
-
-  Array.prototype.clear = function () {
-    this.splice(0, this.length);
-  };
-
-  var list = new Array();
-  var listtoadd = new Array();
-
-  graph = new joint.dia.Graph;
-
-  var paper = new joint.dia.Paper({
-    el: $('#myholder'),
-    width: $('#content').width(),
-    height: $('#content').height(),
-    gridSize: 1,
-    model: graph
-  });
-
-  var erd = joint.shapes.erd;
-
-  var element = function (elm, x, y, label) {
-    var cell = new elm({
-      position: {
-        x: x,
-        y: y
-      },
-      attrs: {
-        text: {
-          text: label
-        }
-      }
-    });
-
-    graph.addCell(cell);
-
-    return cell;
-
-  };
-
-  var link = function (elm1, elm2) {
-    var myLink = new erd.Line({
-      source: {
-        id: elm1.id
-      },
-      target: {
-        id: elm2.id
-      }
-    });
-    graph.addCell(myLink);
-    return myLink;
-  };
-
-  loaddbs(element, link);
-    
-  $("#newConceptual").click(function () {
-    $("#models").prepend('<li onclick="selectModel(this)">new </li>');
-  });  
-  
-
-  $("#entityclick").click(function () {
-    listtoadd[0] = erd.Entity;
-  });
-
-  $("#relationclick").click(function () {
-    listtoadd[0] = erd.Relationship;
-  });
-
-  $("#atributoclick").click(function () {
-    listtoadd[0] = erd.Normal;
-  });
-
-  $("#atributochaveclick").click(function () {
-    listtoadd[0] = erd.Key;
-  });
-
-  $("#especializacaoclick").click(function () {
-    listtoadd[0] = erd.ISA;
-  });
-
-  $("#lineclick").click(function () {
-    if (list.length == 2) {
-      
-      var x = graph.getCell(list[0].model.attributes.id);
-      var y = graph.getCell(list[1].model.attributes.id);
-      
-      link(x, y);
-      clearSelection(list);
-    } else {      
-      var connection = new joint.dia.Link({
-        source: {
-          x: 50, y: 500
-        },
-        target: {
-          x: 50, y: 350
-        },
-        attrs: {}
-      });
-      connection.attr({
-        ".connection": {
-          stroke: "black"
-        }
-      });
-      connection.addCell(link);
-    }
-  });
-
-  $("#lessclick").click(function () {
-    x = x - 0.1;
-    paper.scale(x, x);
-    $
-  });
-
-  $("#moreclick").click(function () {
-    x = x + 0.1;
-    paper.scale(x, x);
-  });
-
-  $("#nameInput").blur(function () {
-    if(list.length != 0){
-        list[list.length-1].model.attributes.attrs.text.text = $("#nameInput").val();
-        list[list.length-1].update();
-    }    
-            
-    if(modelSelected != ""){        
-        $(modelSelected).text($("#nameInput").val());
-        text="";
-    }    
-  });
-
-  paper.on("cell:pointerdown", function (cellview, evt, x, y) {
-    if (evt.originalEvent.ctrlKey == true || evt.originalEvent.altKey == true) {
-      if (cellview.model.attributes.attrs['.outer'].fill == 'white') {
-        addSelection(list, cellview);
-        $("#nameInput").val(cellview.model.attributes.attrs.text.text);
-      } else {
-        removeSelection(list,cellview, true);
-      }
-      cellview.update();
-    }
-  });
-
-  paper.on('blank:pointerdown', function (evt, x, y) {
-    if (listtoadd.length != 0) {
-      if (listtoadd[0] == erd.Entity) {
-        element(erd.Entity, x, y, "Entidade");
-      } else if (listtoadd[0] == erd.Relationship) {
-        element(erd.Relationship, x, y, "Relacionamento");
-      } else if (listtoadd[0] == erd.Normal) {
-        element(erd.Normal, x, y, "Atributo");
-      } else if (listtoadd[0] == erd.Key) {
-        element(erd.Key, x, y, "chave");
-      } else if (listtoadd[0] == erd.ISA) {
-        element(erd.ISA, x, y, "");
-      }
-      listtoadd.pop();
-    }
-      clearSelection(list);
-
-  });
+//  var x = 1;
+//
+//  Array.prototype.clear = function () {
+//    this.splice(0, this.length);
+//  };
+//
+//  var list = new Array();
+//  var listtoadd = new Array();
+//
+//  graph = new joint.dia.Graph;
+//
+//  var paper = new joint.dia.Paper({
+//    el: $('#myholder'),
+//    width: $('#content').width(),
+//    height: $('#content').height(),
+//    gridSize: 1,
+//    model: graph
+//  });
+//
+//  var erd = joint.shapes.erd;
+//
+//  var element = function (elm, x, y, label) {
+//    var cell = new elm({
+//      position: {
+//        x: x,
+//        y: y
+//      },
+//      attrs: {
+//        text: {
+//          text: label
+//        }
+//      }
+//    });
+//
+//    graph.addCell(cell);
+//
+//    return cell;
+//
+//  };
+//
+//  var link = function (elm1, elm2) {
+//    var myLink = new erd.Line({
+//      source: {
+//        id: elm1.id
+//      },
+//      target: {
+//        id: elm2.id
+//      }
+//    });
+//    graph.addCell(myLink);
+//    return myLink;
+//  };
+//
+//  loaddbs(element, link);
+//    
+//  $("#newConceptual").click(function () {
+//    $("#models").prepend('<li onclick="selectModel(this)">new </li>');
+//  });  
+//  
+//
+//  $("#entityclick").click(function () {
+//    listtoadd[0] = erd.Entity;
+//  });
+//
+//  $("#relationclick").click(function () {
+//    listtoadd[0] = erd.Relationship;
+//  });
+//
+//  $("#atributoclick").click(function () {
+//    listtoadd[0] = erd.Normal;
+//  });
+//
+//  $("#atributochaveclick").click(function () {
+//    listtoadd[0] = erd.Key;
+//  });
+//
+//  $("#especializacaoclick").click(function () {
+//    listtoadd[0] = erd.ISA;
+//  });
+//
+//  $("#lineclick").click(function () {
+//    if (list.length == 2) {
+//      
+//      var x = graph.getCell(list[0].model.attributes.id);
+//      var y = graph.getCell(list[1].model.attributes.id);
+//      
+//      link(x, y);
+//      clearSelection(list);
+//    } else {      
+//      var connection = new joint.dia.Link({
+//        source: {
+//          x: 50, y: 500
+//        },
+//        target: {
+//          x: 50, y: 350
+//        },
+//        attrs: {}
+//      });
+//      connection.attr({
+//        ".connection": {
+//          stroke: "black"
+//        }
+//      });
+//      connection.addCell(link);
+//    }
+//  });
+//
+//  $("#lessclick").click(function () {
+//    x = x - 0.1;
+//    paper.scale(x, x);
+//    $
+//  });
+//
+//  $("#moreclick").click(function () {
+//    x = x + 0.1;
+//    paper.scale(x, x);
+//  });
+//
+//  $("#nameInput").blur(function () {
+//    if(list.length != 0){
+//        list[list.length-1].model.attributes.attrs.text.text = $("#nameInput").val();
+//        list[list.length-1].update();
+//    }    
+//            
+//    if(modelSelected != ""){        
+//        $(modelSelected).text($("#nameInput").val());
+//        text="";
+//    }    
+//  });
+//
+//  paper.on("cell:pointerdown", function (cellview, evt, x, y) {
+//    if (evt.originalEvent.ctrlKey == true || evt.originalEvent.altKey == true) {
+//      if (cellview.model.attributes.attrs['.outer'].fill == 'white') {
+//        addSelection(list, cellview);
+//        $("#nameInput").val(cellview.model.attributes.attrs.text.text);
+//      } else {
+//        removeSelection(list,cellview, true);
+//      }
+//      cellview.update();
+//    }
+//  });
+//
+//  paper.on('blank:pointerdown', function (evt, x, y) {
+//    if (listtoadd.length != 0) {
+//      if (listtoadd[0] == erd.Entity) {
+//        element(erd.Entity, x, y, "Entidade");
+//      } else if (listtoadd[0] == erd.Relationship) {
+//        element(erd.Relationship, x, y, "Relacionamento");
+//      } else if (listtoadd[0] == erd.Normal) {
+//        element(erd.Normal, x, y, "Atributo");
+//      } else if (listtoadd[0] == erd.Key) {
+//        element(erd.Key, x, y, "chave");
+//      } else if (listtoadd[0] == erd.ISA) {
+//        element(erd.ISA, x, y, "");
+//      }
+//      listtoadd.pop();
+//    }
+//      clearSelection(list);
+//
+//  });
 
 });
 

@@ -1,0 +1,45 @@
+
+	<header class="mainHeader cf">
+		<h1><a href="#">brModelo</a></h1>
+		<nav>
+			<a href="#">Como Funciona</a>
+			<a href="#">Sobre</a>
+			<a href="#">Contato</a>
+		</nav>
+		<aside class="userInfo">
+            <i class="fa fa-wrench"></i>
+<!--			<img src="imgs/user.jpg" alt="Milton" />-->
+			<div class="options">
+				<a href="#">Perfil</a>
+				<a href="#">Logout</a>
+			</div> <!-- End .options -->
+		</aside> <!-- End .userInfo -->
+	</header> <!-- End .mainHeader -->
+
+<div class="contentLogin" > 
+  
+  <div class="loginheader">
+    <h2> brModelo </h2>
+  </div> <!-- End .header -->
+
+  <form>
+  <div class="fieldGroup"> 
+    
+    <div class="field login"> 
+      <input type="email" placeholder="Email" name="login" tabindex="1" ng-model="user.mail" required>
+    </div>  
+    
+    <div class="field senha">
+      <input type="password" placeholder="Senha" name="password" tabindex="2" ng-model="user.password" required>
+    </div>  
+    
+    <div class="field acoes">    
+      <button type="button" class="button" tabindex="3" ng-click="login(user)">Entrar</button> 
+    </div>
+    
+  </div>
+    </form>
+  
+  <a>Esqueceu sua senha?</a> 
+
+</div>

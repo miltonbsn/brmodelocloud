@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-br" ng-app="myapp">
 <head>
 	<meta charset="utf-8" />
 	<title>BR Modelo</title>
@@ -11,10 +11,13 @@
 	<link rel="stylesheet" media="screen" href="css/joint.css">
 	<link rel="stylesheet" media="screen" href="css/fontAwesome/font-awesome.css">
 	
+    <script src="http://code.angularjs.org/1.2.5/angular.min.js"></script>
+    <script src="http://code.angularjs.org/1.2.5/angular-route.min.js"></script>
+    <script src="project.js"></script>
 
 	<!-- Scripts -->
 	<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
-	<script type="text/javascript" src="resource/js/cssua.min.js"></script>
+	<!--	<script type="text/javascript" src="resource/js/cssua.min.js"></script> -->
 
 	<!-- Web Fonts -->
 	<link href='http://fonts.googleapis.com/css?family=Lato:100,100italic,light,lightitalic,regular,regularitalic,bold,bolditalic,900,900italic' rel='stylesheet' type='text/css'>
@@ -22,93 +25,22 @@
 	<!-- iPhone -->
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	
+<!--
     <script src="js/joint.js"></script>
     <script src="js/joint.shapes.erd.js"></script>
     <script src="js/main.js"></script>
-
-    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.5/angular.min.js"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.5/angular-resource.min.js"></script>
-    <script src="https://cdn.firebase.com/v0/firebase.js"></script>
-    <script src="http://firebase.github.io/angularFire/angularFire.js"></script>
+-->
   
-
 	<!--[if lte IE 8]>
 	<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
 	<![endif]-->
 </head>
 <body>
-	<header class="mainHeader cf">
-		<h1><a href="#">BR Modelo</a></h1>
-		<nav>
-			<a href="#">Como Funciona</a>
-			<a href="#">Sobre</a>
-			<a href="#">Contato</a>
-		</nav>
-		<aside class="userInfo">
-            <i class="fa fa-wrench"></i>
-<!--			<img src="imgs/user.jpg" alt="Milton" />-->
-			<div class="options">
-				<a href="#">Perfil</a>
-				<a href="#">Logout</a>
-			</div> <!-- End .options -->
-		</aside> <!-- End .userInfo -->
-	</header> <!-- End .mainHeader -->
 
-	<section class="content cf">
-		<nav class="modelList cf">
-			<ul id="models">
-				<li onclick="selectModel(this)">Base exemplo </li>
-                <li onclick="selectModel(this)" class="active">Base de dados </li>
-                <li onclick="selectModel(this)">Modelagem exemplo </li>
 
-                <li class="newModel" id="newModel">
-					<strong><i class="fa fa-plus"></i></strong>
-                    <strong id="newConceptual">C</strong>
-                    <strong>L</strong>
-				</li> 
-			</ul>
-		</nav>
-		<section class="visibleModel" id="content">
-			<header>
-				<h2>Nome do Model</h2>
-				<aside class="tools">
+  <div ng-view></div>
 
-				</aside><!-- End .tools -->
-				<aside class="zoom">
-					<span id="moreclick" class="button"><i class="fa fa-search-plus"></i></span>
-					<span id="lessclick" class="button"><i class="fa fa-search-minus"></i></span>
-				</aside>
-			</header>
-			<div class="theModel" id="myholder"></div> <!-- End .theModel -->
-			<footer>
-				<ul class="modelElements cf">                    
-					<li id="entityclick"><img src="imgs/icon/rectangle.png"/></li>
-					<li id="relationclick"><img src="imgs/icon/rhombus.png"/></li>
-					<li id="atributoclick"><img src="imgs/icon/atributo.png"/></li>
-					<li id="atributochaveclick"><img src="imgs/icon/atributo_identificador.png"/></li>
-                    <li id="especializacaoclick"><img src="imgs/icon/especializacao.png"/></li>
-					<li id="lineclick"><img src="imgs/icon/connect.png"/></li>		
-				</ul> <!-- End ul.modelElements -->
-				<aside class="shareOptions">
-                    <li><i class="fa fa-save"></i></li>
-					<i class="fa fa-share-square-o"><span>Compartilhar</span></i>
-					<ul>
-						<li><i class="fa fa-facebook"><span>Facebook</span></i></li>
-						<li><i class="fa fa-twitter"><span>Twitter</span></i></li>
-						<li><i class="fa fa-google-plus"><span>Email</span></i></li>
-						<li><i class="fa fa-envelope-o"><span>Email</span></i></li>
-					</ul>
-				</aside>
-			</footer>
-		</section> <!-- End .visibleModel -->
-      
-       <section class="menuModel" id="menu">
-            <label class="description">Description</label>
-            <label class="label">text:</label>
-            <input id="nameInput"/>
-       </section> <!-- End .visibleModel -->
-      
-	</section> <!-- End .content -->
+    
 </body>
 
 </html>

@@ -484,3 +484,55 @@ i > span {display: none;}
 }
 
 .shareOptions:hover {width: 250px;}
+
+input[type="text"],
+input[type="password"],
+input[type="email"]{
+        padding: 5px 10px;
+        border: solid 1px rgba(0,0,0, 0.1);
+        margin: 0;
+        height: 35px;
+        margin-right:15px;
+}
+
+/***********************************************************/
+/* .login */
+/***********************************************************/
+.contentLogin {
+  margin-top: 170px;
+  position: absolute;
+  left: 50%;
+  margin-left: -215px;
+  text-align:center;
+}
+
+.loginheader{
+	font-size: 5.5em;
+	line-height: 50px;
+	font-variant: small-caps;
+	padding-bottom: 50px;
+	color: rgba(166, 211, 117, 0.8);
+}  
+
+.fieldGroup .field {
+  float:left;
+  margin-bottom: 15px;
+  padding:5px;
+}  
+
+.fieldGroup .field input[type="email"] {
+  width: 200px;
+  
+}  
+ 
+.fieldGroup .field input[type="password"] {
+  width: 105px;
+}  
+
+.fieldGroup .field button {
+  background-color: rgba(166, 211, 117, 1);
+}  
+
+.contentLogin a {
+  font-size: 14px;
+}  
