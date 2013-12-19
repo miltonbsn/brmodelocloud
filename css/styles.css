@@ -536,3 +536,7 @@ input[type="email"]{
 .contentLogin a {
   font-size: 14px;
 }  
+
+.error{
+    background-color: #FFFFBA;
+}

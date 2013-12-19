@@ -23,23 +23,32 @@
   </div> <!-- End .header -->
 
   <form>
-  <div class="fieldGroup"> 
+
+  <div class="registerGroup"> 
     
-    <div class="field login"> 
+    <div class="field name"> 
+      <input type="text" placeholder="Nome" name="login" tabindex="1" ng-model="user.mail" id="emailfield" value="">
+    </div>  
+    
+    <div class="email "> 
       <input type="text" placeholder="Email" name="login" tabindex="1" ng-model="user.mail" id="emailfield" value="">
     </div>  
-    
-    <div class="field senha">
+      
+    <div class="field ">
       <input type="password" placeholder="Senha" name="password" tabindex="2" ng-model="user.password" id="passwordfield" value="">
+    </div>
+      
+    <div class="field ">
+      <input type="password" placeholder="Confirme senha" name="password" tabindex="2" ng-model="user.password" id="passwordfield" value="">
     </div>  
     
-    <div class="field acoes">    
+    <div class="field ">    
       <button type="button" class="button" tabindex="3" ng-click="login(user)">Entrar</button> 
     </div>
     
   </div>
-    </form>
+
+</form>
   
-  <a>Esqueceu sua senha?</a> 
 
 </div>
