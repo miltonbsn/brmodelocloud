@@ -496,7 +496,7 @@ input[type="email"]{
 }
 
 /***********************************************************/
-/* .login */
+/* login */
 /***********************************************************/
 .contentLogin {
   margin-top: 170px;
@@ -516,16 +516,16 @@ input[type="email"]{
 
 .fieldGroup .field {
   float:left;
-  margin-bottom: 15px;
   padding:5px;
 }  
 
-.fieldGroup .field input[type="email"] {
+.fieldGroup .field input[type="text"] {
+  height: 40px;
   width: 200px;
-  
 }  
  
 .fieldGroup .field input[type="password"] {
+  height: 40px;
   width: 105px;
 }  
 
@@ -537,6 +537,45 @@ input[type="email"]{
   font-size: 14px;
 }  
 
+.contentLogin .control{
+    margin-top: 80px;
+}
+
 .error{
     background-color: #FFFFBA;
 }
+
+/***********************************************************/
+/* register */
+/***********************************************************/
+.contentRegister{
+  margin-top: 170px;
+  position: absolute;
+  left: 50%;
+  margin-left: -183px;
+  text-align:center;
+}
+
+.registerGroup{
+    
+}
+
+.registerGroup .field input{
+    width: 350px;
+    height: 40px;
+    margin-bottom: 5px;
+}
+
+.registerGroup .control{
+    margin-top: 20px;        
+}
+
+.contentRegister a {
+  font-size: 14px;
+    margin-right: 5px;        
+}
+
+.contentRegister button{
+ background-color: rgba(166, 211, 117, 1);
+}
+
