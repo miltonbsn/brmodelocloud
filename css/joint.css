@@ -1,4 +1,4 @@
-/*! Joint v0.6.2 - JavaScript diagramming library  2013-09-11 
+/*! JointJS v0.6.4 - JavaScript diagramming library  2013-10-15 
 
 
 This Source Code Form is subject to the terms of the Mozilla Public
@@ -111,6 +111,8 @@ very thin.
    fill: black;
    stroke: black;
 */
+   /* This makes the arrowheads point to the border of objects even though the transform: scale() is applied on them. */
+   vector-effect: non-scaling-stroke;
 }
 
 /* 
@@ -135,7 +137,9 @@ Vertex markers are `<circle>` elements that appear at connection vertex position
    opacity: 0;
    cursor: pointer;
 }
-
+.link-tools .tool-options {
+   display: none;       /* by default, we don't display link options tool */
+}
 .link-tools .tool-remove circle {
    fill: red;
 }
