@@ -279,7 +279,6 @@ i > span {display: none;}
 	width: 130px;
 }
 
-
 /***********************************************************/
 /* .menuModel */
 /***********************************************************/
@@ -348,8 +347,7 @@ i > span {display: none;}
     text-overflow:ellipsis;
 	color: rgba(0, 0, 0, 0.7);
   	background-color: rgba(255,255,255, 0.5);
-    border: 0px; 
-  
+    border: 0px;  
 }
 
 
@@ -403,8 +401,6 @@ i > span {display: none;}
 	margin-bottom: 10px;
 	cursor: pointer;
 	opacity: 0.5;
-	
-
 }
 
 .visibleModel .tools:hover span,
@@ -506,7 +502,7 @@ input[type="email"]{
   text-align:center;
 }
 
-.loginheader{
+.contentLogin > header {
 	font-size: 5.5em;
 	line-height: 50px;
 	font-variant: small-caps;
@@ -537,18 +533,18 @@ input[type="email"]{
   font-size: 14px;
 }  
 
-.contentLogin .control{
+.contentLogin .control {
     margin-top: 80px;
 }
 
-.error{
+.error {
     background-color: #FFFFBA;
 }
 
 /***********************************************************/
 /* register */
 /***********************************************************/
-.contentRegister{
+.contentRegister {
   margin-top: 170px;
   position: absolute;
   left: 50%;
@@ -556,11 +552,7 @@ input[type="email"]{
   text-align:center;
 }
 
-.registerGroup{
-    
-}
-
-.registerGroup .field input{
+.registerGroup .field input {
     width: 350px;
     height: 40px;
     margin-bottom: 5px;
@@ -575,14 +567,14 @@ input[type="email"]{
     margin-right: 5px;        
 }
 
-.contentRegister button{
+.contentRegister button {
  background-color: rgba(166, 211, 117, 1);
 }
 
 /***********************************************************/
-/* .alternativeHeader */
+/* .publicHeader */
 /***********************************************************/
-.alternativeHeader {
+.publicHeader {
 	position: fixed;
 	top: 0;
 	right: 0;
@@ -590,7 +582,7 @@ input[type="email"]{
 	height: 50px;  
 }
 
-.alternativeHeader > nav a {
+.publicHeader nav a {
 	display: block;
 	float: left;
 	line-height: 49px;
@@ -598,10 +590,9 @@ input[type="email"]{
 	padding: 0 20px;
 	border-right: 1px solid rgba(255,255,255, 0.2);
 	color: rgb(45, 46, 47);
-
 }
 
-.alternativeHeader > button {
+.publicHeader button {
 	position: absolute;
 	right: 0;
 	top: 0;
