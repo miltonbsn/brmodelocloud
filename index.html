@@ -1,47 +1,42 @@
 <!DOCTYPE html>
 <html lang="pt-br" ng-app="myapp">
+    <head>
+        <meta charset="utf-8" />
+        <title>BR Modelo</title>
 
-<head>
-  <meta charset="utf-8" />
-  <title>BR Modelo</title>
+        <!-- CSS -->
+        <link rel="stylesheet" media="screen" href="css/reset.css">
+        <link rel="stylesheet" media="screen" href="css/joint.css">
+        <link rel="stylesheet" media="screen" href="css/fontAwesome/font-awesome.css">
 
-  <!-- CSS -->
-  <link rel="stylesheet" media="screen" href="css/reset.css">
-  <link rel="stylesheet" media="screen" href="css/styles.css">
-  <link rel="stylesheet" media="screen" href="css/effects.css">
-  <link rel="stylesheet" media="screen" href="css/joint.css">
-  <link rel="stylesheet" media="screen" href="css/fontAwesome/font-awesome.css">
+        <link rel="stylesheet" media="screen" href="css/styles.css">
+        <link rel="stylesheet" media="screen" href="css/effects.css">
 
-  <script src="http://code.angularjs.org/1.2.5/angular.min.js"></script>
-  <script src="http://code.angularjs.org/1.2.5/angular-route.min.js"></script>
-  <script src="js/project.js"></script>
+        <!-- Web Fonts -->
+        <link href='http://fonts.googleapis.com/css?family=Lato:100,100italic,light,lightitalic,regular,regularitalic,bold,bolditalic,900,900italic' rel='stylesheet' type='text/css'>
 
-  <!-- Scripts -->
-  <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
-  <!--	<script type="text/javascript" src="resource/js/cssua.min.js"></script> -->
+        <!-- iPhone -->
+        <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <!-- Web Fonts -->
-  <link href='http://fonts.googleapis.com/css?family=Lato:100,100italic,light,lightitalic,regular,regularitalic,bold,bolditalic,900,900italic' rel='stylesheet' type='text/css'>
+        <!--[if lte IE 8]>
+            <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+        <![endif]-->
+    </head>
+    <body>
+        <div ng-view>
+            <!-- Build things here :) -->
+        </div>
 
-  <!-- iPhone -->
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+        <!-- Scripts -->
+        <script src="http://code.angularjs.org/1.2.5/angular.min.js"></script>
+        <script src="http://code.angularjs.org/1.2.5/angular-route.min.js"></script>
+        <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.0.min.js"></script>
+        
+        <script src="js/project.js"></script>
+        <script src="js/main.js"></script>
+        <script src="js/register.js"></script>
 
-
-  <script src="js/joint.js"></script>
-  <script src="js/joint.shapes.erd.js"></script>
-  <script src="js/main.js"></script>
-  <script src="js/register.js"></script>
-
-
-  <!--[if lte IE 8]>
-	<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
-	<![endif]-->
-</head>
-
-<body>
-
-  <div ng-view></div>
-
-</body>
-
+        <script src="js/joint.js"></script>
+        <script src="js/joint.shapes.erd.js"></script>
+    </body>
 </html>
