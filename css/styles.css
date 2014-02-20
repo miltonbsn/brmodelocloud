@@ -12,9 +12,11 @@ body {
 
 a,
 a:visited {
-	color: rgba(166, 211, 117, 1);
+	color: rgba(145, 180, 99, 1);
 	text-decoration: none;
 }
+
+.hide {display: none! important;}
 
 i > span {display: none;}
 
@@ -26,7 +28,7 @@ i > span {display: none;}
 	display: inline-block;
 	padding: 8px 10px;
 	border: 1px solid rgba(0,0,0, 0.3);
-	border-radius: 2px;
+	border-radius: 3px;
 	font-size: 1.3em;
 	text-align: center;
 	box-shadow: 0 1px 1px rgba(0,0,0, 0.3);
@@ -138,11 +140,8 @@ i > span {display: none;}
 	text-align: center;
 	font-size: 3.0em;
 	line-height: 1.5em;
-    
 	cursor: pointer;
 }
-
-
 
 .userInfo > .options {
 	position: absolute;
@@ -489,112 +488,4 @@ input[type="email"]{
         margin: 0;
         height: 35px;
         margin-right:15px;
-}
-
-/***********************************************************/
-/* login */
-/***********************************************************/
-.contentLogin {
-  margin-top: 170px;
-  position: absolute;
-  left: 50%;
-  margin-left: -215px;
-  text-align:center;
-}
-
-.contentLogin > header {
-	font-size: 5.5em;
-	line-height: 50px;
-	font-variant: small-caps;
-	padding-bottom: 50px;
-	color: rgba(166, 211, 117, 0.8);
-}  
-
-.fieldGroup .field {
-  float:left;
-  padding:5px;
-}  
-
-.fieldGroup .field input[type="text"] {
-  height: 40px;
-  width: 200px;
-}  
- 
-.fieldGroup .field input[type="password"] {
-  height: 40px;
-  width: 105px;
-}  
-
-.fieldGroup .field button {
-  background-color: rgba(166, 211, 117, 1);
-}  
-
-.contentLogin a {
-  font-size: 14px;
-}  
-
-.contentLogin .control {
-    margin-top: 80px;
-}
-
-.error {
-    background-color: #FFFFBA;
-}
-
-/***********************************************************/
-/* register */
-/***********************************************************/
-.contentRegister {
-  margin-top: 170px;
-  position: absolute;
-  left: 50%;
-  margin-left: -183px;
-  text-align:center;
-}
-
-.registerGroup .field input {
-    width: 350px;
-    height: 40px;
-    margin-bottom: 5px;
-}
-
-.registerGroup .control{
-    margin-top: 20px;        
-}
-
-.contentRegister a {
-  font-size: 14px;
-    margin-right: 5px;        
-}
-
-.contentRegister button {
- background-color: rgba(166, 211, 117, 1);
-}
-
-/***********************************************************/
-/* .publicHeader */
-/***********************************************************/
-.publicHeader {
-	position: fixed;
-	top: 0;
-	right: 0;
-	left: 0;
-	height: 50px;  
-}
-
-.publicHeader nav a {
-	display: block;
-	float: left;
-	line-height: 49px;
-	font-size: 1.5em;
-	padding: 0 20px;
-	border-right: 1px solid rgba(255,255,255, 0.2);
-	color: rgb(45, 46, 47);
-}
-
-.publicHeader button {
-	position: absolute;
-	right: 0;
-	top: 0;
-  	margin: 10px;
 }

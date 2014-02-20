@@ -1,50 +1,104 @@
-<header class="publicHeader">
-    <nav>
-        <a href="#">Como Funciona</a>
-        <a href="#">Sobre</a>
-        <a href="#">Contato</a>
-    </nav>
+<header class="publicHeader cf">
     <button type="button" class="button" ng-click="register()">Criar conta</button>
 </header><!-- End .publicHeader -->
 
-<section class="contentLogin">
-    <header>
-        <h1>brModelo</h1>
-    </header>
+<section class="contentPublic">
+    <section class="box login cf">
+        <header>
+            <h1>BrModelo</h1>
+        </header>
+        <form class="cf">
 
-    <div class="fieldGroup">
-        <div class="field login">
-            <input
-                type="text"
-                placeholder="Email"
-                name="login" tabindex="1"
-                ng-model="user.mail"
-                id="emailfield"
-                value=""
-            />
-        </div><!-- End .field -->
-        <div class="field senha">
-            <input
-                type="password"
-                placeholder="Senha"
-                name="password"
-                tabindex="2"
-                ng-model="user.password"
-                id="passwordfield"
-                value=""
-            />
-        </div><!-- End .field -->
-        <div class="field acoes">
-            <button 
-                type="button"
-                class="button"
-                tabindex="3"
-                ng-click="login(user)">Entrar</button>
-        </div><!-- End .field -->
-    </div><!-- End .fieldGroup -->
+            <div class="field cf">
+                <label class="hide" for="emailfield">Email:</label>
+                <input
+                    type="text"
+                    placeholder="Email"
+                    name="login" tabindex="1"
+                    ng-model="user.mail"
+                    id="emailfield"
+                    value=""
+                />
+            </div><!-- End .field -->
 
-    <div class="control">
-        <a>Esqueceu sua senha?</a>
-    </div><!-- End .control -->
+            <div class="field cf">
+                <label class="hide" for="passwordfield">Senha:</label>
+                <input
+                    type="password"
+                    placeholder="Senha"
+                    name="password"
+                    tabindex="2"
+                    ng-model="user.password"
+                    id="passwordfield"
+                    value=""
+                />
+            </div><!-- End .field -->
 
-</section><!-- End .contentLogin -->
+            <div class="actions cf">
+                <button 
+                    type="button"
+                    class="button"
+                    tabindex="3"
+                    ng-click="login(user)">Entrar</button>
+            </div><!-- End .actions -->
+        </form>
+    </section><!-- End .box.login -->
+
+    <div class="forgot">
+        <a href="#">Esqueci a senha!</a>
+    </div><!-- End .forgot -->
+
+</section><!-- End .contentPublic -->
+
+<section class="hide">
+    <header class="publicHeader">
+        <nav>
+            <a href="#">Como Funciona</a>
+            <a href="#">Sobre</a>
+            <a href="#">Contato</a>
+        </nav>
+        <button type="button" class="button" ng-click="register()">Criar conta</button>
+    </header><!-- End .publicHeader -->
+
+    <section class="contentLogin">
+        <header>
+            <h1>brModelo</h1>
+        </header>
+
+        <div class="fieldGroup">
+            <div class="field login">
+                <input
+                    type="text"
+                    placeholder="Email"
+                    name="login" tabindex="1"
+                    ng-model="user.mail"
+                    id="emailfield"
+                    value=""
+                />
+            </div><!-- End .field -->
+            <div class="field senha">
+                <input
+                    type="password"
+                    placeholder="Senha"
+                    name="password"
+                    tabindex="2"
+                    ng-model="user.password"
+                    id="passwordfield"
+                    value=""
+                />
+            </div><!-- End .field -->
+            <div class="field acoes">
+                <button 
+                    type="button"
+                    class="button"
+                    tabindex="3"
+                    ng-click="login(user)">Entrar</button>
+            </div><!-- End .field -->
+        </div><!-- End .fieldGroup -->
+
+        <div class="control">
+            <a>Esqueceu sua senha?</a>
+        </div><!-- End .control -->
+
+    </section><!-- End .contentLogin -->
+</section>

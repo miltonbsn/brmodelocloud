@@ -1,0 +1,96 @@
+/*********************************************************************/
+/* Public area */
+/*********************************************************************/
+.publicHeader {
+    position: relative;
+    padding: 20px;
+    margin-bottom: 20px;
+}
+
+.publicHeader button {
+    float: right;
+}
+
+.contentPublic {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+/*********************************************************************/
+/* .box */
+/*********************************************************************/
+.box {
+    position: relative;
+    max-width: 350px;
+    padding: 102px 20px 20px 20px;
+    margin: 0 auto;
+    border-radius: 4px;
+background-color: #ffffff;
+background-image: -webkit-gradient(linear, left top, left bottom, from(rgb(255, 255, 255)), to(rgb(235, 235, 235)));
+background-image: -webkit-linear-gradient(top, rgb(255, 255, 255), rgb(235, 235, 235));
+background-image: -moz-linear-gradient(top, rgb(255, 255, 255), rgb(235, 235, 235));
+background-image: -o-linear-gradient(top, rgb(255, 255, 255), rgb(235, 235, 235));
+background-image: -ms-linear-gradient(top, rgb(255, 255, 255), rgb(235, 235, 235));
+background-image: linear-gradient(top, rgb(255, 255, 255), rgb(235, 235, 235));
+filter: progid:DXImageTransform.Microsoft.gradient(GradientType=0,StartColorStr='#ffffff', EndColorStr='#ebebeb');
+    box-shadow: 0 2px 6px rgba(0,0,0, 0.3);
+}
+
+.box header {
+    position: absolute;
+    top: 20px;
+    left: -10px;
+    right: -10px;
+    padding: 20px;
+    border-radius: 2px;
+    box-shadow: 0 1px 0 rgba(255, 255, 255, 0.5) inset,
+                0 -1px 0 rgba(95, 110, 55, 0.3) inset,
+                0 0 3px rgba(0,0,0, 0.3);
+background-color: #bae193;
+background-image: -webkit-gradient(linear, left top, left bottom, from(rgb(186, 225, 147)), to(rgb(166, 211, 117)));
+background-image: -webkit-linear-gradient(top, rgb(186, 225, 147), rgb(166, 211, 117));
+background-image: -moz-linear-gradient(top, rgb(186, 225, 147), rgb(166, 211, 117));
+background-image: -o-linear-gradient(top, rgb(186, 225, 147), rgb(166, 211, 117));
+background-image: -ms-linear-gradient(top, rgb(186, 225, 147), rgb(166, 211, 117));
+background-image: linear-gradient(top, rgb(186, 225, 147), rgb(166, 211, 117));
+filter: progid:DXImageTransform.Microsoft.gradient(GradientType=0,StartColorStr='#bae193', EndColorStr='#a6d375');
+}
+
+.box header h1 {
+    text-align: center;
+    font-size: 3em;
+    font-weight: bold;
+}
+
+.box.login .field {
+    margin-bottom: 20px;
+}
+
+.box.login .field input {
+    display: block;
+    width: 100%;
+    font-size: 1.5em;
+    border-color: rgba(0,0,0, 0.3);
+}
+
+.box.login .field input:focus {border-color: rgba(0,0,0, 0.7);}
+
+.login .actions button {
+    float: right;
+}
+
+/*********************************************************************/
+/* .forgot */
+/*********************************************************************/
+.forgot {
+    max-width: 350px;
+    padding: 20px 0 0 0 ;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.forgot a {
+    display: inline-block;
+    font-size: 1.4em;
+    padding: 0 10px;
+}
