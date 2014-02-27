@@ -44,6 +44,60 @@
         </form>
     </section><!-- End .box.login -->
 
+	<section class="box newUser cf">
+        <header>
+            <h1>BrModelo</h1>
+        </header>
+        <h2>Criar Conta</h2>
+        <form class="cf">
+
+            <div class="field"> 
+                <input
+                       type="text"
+                       placeholder="Email"
+                       name="login"
+                       tabindex="1"
+                       ng-model="user.mail"
+                       id="regMail"
+                       value=""
+                />
+            </div>  
+
+            <div class="field">
+                <input
+                       type="password"
+                       placeholder="Senha"
+                       name="password"
+                       tabindex="2"
+                       ng-model="user.password"
+                       id="regPassword"
+                       value=""
+                />
+            </div>
+
+            <div class="field">
+                <input
+                       type="password"
+                       placeholder="Confirme senha"
+                       name="password" tabindex="2"
+                       ng-model="user.confirmation"
+                       id="regRePassword"
+                       value=""
+                    />
+            </div>  
+
+            <div class="actions cf">
+                <a class="back" ng-click="login()">Cancelar</a>    
+                <button
+                        type="button"
+                        class="button"
+                        tabindex="3"
+                        ng-click="register(user)">Registrar</button> 
+            </div><!-- End .actions -->
+        </form>
+    </section><!-- End .box.newUser -->
+
+
     <div class="forgot">
         <a href="#">Esqueci a senha!</a>
     </div><!-- End .forgot -->
