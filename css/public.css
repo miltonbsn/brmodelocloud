@@ -16,6 +16,8 @@
     margin: 0 auto;
 }
 
+.field input {border-color: rgba(0,0,0, 0.3);}
+
 /*********************************************************************/
 /* .feedback */
 /*********************************************************************/
@@ -28,7 +30,8 @@
     font-size: 1.5em;
 }
 
-.field.error > input {
+.field.error > input,
+.field.error ::-webkit-input-placeholder {
     color: #fc5858;
     border-color: #fc5858;
     background-color: #F0B7B7;
