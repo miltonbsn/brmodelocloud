@@ -30,6 +30,7 @@ i > span {display: none;}
 	border: 1px solid rgba(0,0,0, 0.3);
 	border-radius: 3px;
 	font-size: 1.3em;
+    line-height: 16px;
 	text-align: center;
 	box-shadow: 0 1px 1px rgba(0,0,0, 0.3);
 	color: rgba(0,0,0, 0.7);
@@ -45,6 +46,14 @@ i > span {display: none;}
 .button.active{
 	top: 1px;
 	box-shadow: 0 0 0 transparent;
+}
+
+.button.linkButton {
+    border-color: transparent;
+    text-decoration: underline;
+    color: rgba(145, 180, 99, 1);
+    background: none transparent;
+    box-shadow: 0 0 0 transparent;
 }
 
 /***********************************************************/
