@@ -1,121 +1,146 @@
-  var app = angular.module('myapp', ['ngRoute']);
+var app = angular.module('myapp', ['ngRoute']);
 
-  app.config(['$routeProvider', '$locationProvider',
-      function ($routeProvider, $locationProvider) {
-      $locationProvider.html5Mode(true);
-      $routeProvider.
-      when('/', {
-        controller: 'loginController',
-        templateUrl: 'view/login.html'
-      }).
-      when('/workspace', {
-        controller: 'workspaceController',
-        templateUrl: 'view/workspace.html'
-      }).
-      when('/register', {
-        controller: 'registerController',
-        templateUrl: 'view/register.html'
-      }).
-      otherwise({
-        redirectTo: '/'
-      });
-      }
-  ]);
+app.config(['$routeProvider', '$locationProvider',
+function ($routeProvider, $locationProvider) {
+    $locationProvider.html5Mode(true);
+    $routeProvider.
+    when('/', {
+      controller: 'loginController',
+      templateUrl: 'view/login.html'
+    }).
+    when('/workspace', {
+      controller: 'workspaceController',
+      templateUrl: 'view/workspace.html'
+    }).
+    otherwise({
+      redirectTo: '/'
+    });
+}
+]);
 
 
-  app.controller('loginController', function ($scope, $location) {
+app.controller('loginController', function ($scope, $location) {
 
-    $scope.register = function () {
-        $("#loginform").addClass("hide");
-        $("#registerform").removeClass("hide");
+  $scope.show = function (place) {
+    switch (place) {
+    case "login":
+      $("#loginform").removeClass("hide");
+      $("#forgotPassword").addClass("hide");
+      $("#registerform").addClass("hide");
+      $("#registerField").removeClass("hide");
+      $("#forgotField").removeClass("hide");
+      break;
+    case "register":
+      $("#loginform").addClass("hide");
+      $("#forgotPassword").addClass("hide");
+      $("#registerform").removeClass("hide");
+      $("#registerField").addClass("hide");
+      $("#forgotField").addClass("hide");
+      break;
+    case "password":
+      $("#loginform").addClass("hide");
+      $("#forgotPassword").removeClass("hide");
+      $("#registerform").addClass("hide");
+      $("#registerField").addClass("hide");
+      $("#forgotField").addClass("hide");
+      break;
     }
-
-    $scope.login = function (user) {
-
-      if (validLoginFields(user) == true) {
-        console.log(user);
-        $location.path('/workspace').replace();
-      }
-
-    }
-    
-    $scope.createUser = function (user) {
-     if (validateFields() == true) {
-       console.log(user);
-       // $location.path('/workspace').replace();
-     }
-   }
-    
-  });
-
-  app.$inject = ['$scope', '$http'];
-
-  function validLoginFields() {
-    var valid = true;
-    var email = $("#emailinput");
-    var password = $("#passwordinput");
-
-    if (email.val() == "") {
-      $("#emailfield").addClass("error");
-      valid = false;
-    } else {
-      $("#emailfield").removeClass("error");
-    }
-
-    if (password.val() == "") {
-      $("#passwordfield").addClass("error");
-      valid = false;
-    } else {
-      $("#passwordfield").removeClass("error");
-    }
-
-    return valid;
   }
 
- function validateFields() {
-   valid = true;
+  $scope.login = function (user) {
+    if (validLoginFields(user) == true) {
+      console.log(user);
+      $location.path('/workspace').replace();
+    }
+  }
 
-   var email = $("#regMail");
-   var password = $("#regPassword");
-   var repassword = $("#regRePassword");
+  $scope.createUser = function (user) {
+    if (validateFields() == true) {
+      console.log(user);
+      // $location.path('/workspace').replace();
+    }
+  }
 
-   validateEmpty(email);
-   validateEmpty(password);
-   validateEmpty(repassword);
+  $scope.recovery = function (user) {
+    console.log($("#emailfield"));
+    console.log($("#emailfield").children().val());
+    var email = $("#emailfield3");
+    validateEmpty(email);
+    isEmail(email);
+  }
 
-   isEmail(email);
-   isValidPassword(password, repassword);
+});
 
-   return valid;
- }
+app.$inject = ['$scope', '$http'];
 
- function validateEmpty(field) {
-   if (field.children().val() == "") {
-     valid = false;
-     onError(field);
-   } else {
-     removeError(field);
-   }
- }
+function validLoginFields() {
+  valid = true;
+  var email = $("#emailfield");
+  var password = $("#passwordfield");
 
- function isValidPassword(pass1, pass2) {
-   if (!(pass1.children().val() == pass2.children().val() && pass1.children().val().length > 3)) {
-     valid = false;
-     onError(pass1);
-     onError(pass2);
-   } else {
-     removeError(pass1);
-     removeError(pass2);
-   }
- }
+  validateEmpty(email);
+  validateEmpty(password);
 
- function isEmail(email) {
+  isEmail(email);
+
+  return valid;
+}
+
+function validateFields() {
+  valid = true;
+
+  var email = $("#regMail");
+  var password = $("#regPassword");
+  var repassword = $("#regRePassword");
+
+  validateEmpty(email);
+  validateEmpty(password);
+  validateEmpty(repassword);
+
+  isEmail(email);
+  isValidPassword(password, repassword);
+
+  return valid;
+}
+
+function validateEmpty(field) {
+  if (field.children().val() == "") {
+    valid = false;
+    onError(field);
+  } else {
+    removeError(field);
+  }
+}
+
+function isValidPassword(pass1, pass2) {
+  if (!(pass1.children().val() == pass2.children().val() && pass1.children().val().length > 3)) {
+    valid = false;
+    onError(pass1);
+    onError(pass2);
+  } else {
+    removeError(pass1);
+    removeError(pass2);
+  }
+}
+
+function isEmail(email) {
   var txt = email.children().val();
-  if (!(txt.length != 0) && ((txt.indexOf("@") < 1) || (txt.indexOf('.') < 7))){
-     onError(email);
-     return false;
-   } else {
-     removeError(email);
-     return true;
-   }
- }
+
+  var re = /^([a-zA-Z0-9_\.\-])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$/;;
+
+  if (!re.test(txt)) {
+    onError(email);
+    valid = false;
+  } else {
+    removeError(email);
+    valid = true;
+  }
+}
+
+function onError(field) {
+  field.addClass("error");
+}
+
+function removeError(field) {
+  field.removeClass("error");
+}

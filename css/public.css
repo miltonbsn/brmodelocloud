@@ -5,6 +5,7 @@
     position: relative;
     padding: 20px;
     margin-bottom: 20px;
+    min-height: 75px;
 }
 
 .publicHeader button {

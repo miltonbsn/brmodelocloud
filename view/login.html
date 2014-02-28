@@ -1,190 +1,91 @@
-<header class="publicHeader cf">
-    <button type="button" class="button" ng-click="register()">Criar conta</button>
-</header><!-- End .publicHeader -->
+<header class="publicHeader cf" >
+  <button type="button" class="button" ng-click="show('register')" id='registerField'>Criar conta</button>
+</header>
+<!-- End .publicHeader -->
 
 <section class="contentPublic">
-    <section class="feedback hide">
-        <div class="message error sd">
-            <p>This is the message to explain about something that went wrong.</p>
-        </div>
-    </section>
-    <section class="box login cf" id="loginform">
-        <header>
-            <h1>BrModelo</h1>
-        </header>
-        <form class="cf">
+  <section class="feedback hide">
+    <div class="message error sd">
+      <p>This is the message to explain about something that went wrong.</p>
+    </div>
+  </section>
+  <section class="box login cf" id="loginform">
+    <header>
+      <h1>BrModelo</h1>
+    </header>
+    <form class="cf">
 
-            <div class="field cf" id="emailfield">
-                <label class="hide" for="emailfield">Email:</label>
-                <input
-                    type="text"
-                    placeholder="Email"
-                    name="login" tabindex="1"
-                    ng-model="user.mail"
-                    id="emailinput"
-                    value=""
-                />
-            </div><!-- End .field -->
+      <div class="field cf" id="emailfield">
+        <input type="text" placeholder="Email" name="login" tabindex="1" ng-model="user.mail" id="emailinput" value="" />
+      </div>
+      <!-- End .field -->
 
-            <div class="field cf" id="passwordfield">
-                <label class="hide" for="passwordfield">Senha:</label>
-                <input
-                    type="password"
-                    placeholder="Senha"
-                    name="password"
-                    tabindex="2"
-                    ng-model="user.password"
-                    id="passwordinput"
-                    value=""
-                />
-            </div><!-- End .field -->
+      <div class="field cf" id="passwordfield">
+        <input type="password" placeholder="Senha" name="password" tabindex="2" ng-model="user.password" id="passwordinput" value="" />
+      </div>
+      <!-- End .field -->
 
-            <div class="actions cf">
-                <button 
-                    type="button"
-                    class="button"
-                    tabindex="3"
-                    ng-click="login(user)">Entrar</button>
-            </div><!-- End .actions -->
-        </form>
-    </section><!-- End .box.login -->
+      <div class="actions cf">
+        <button type="button" class="button" tabindex="3" ng-click="login(user)">Entrar</button>
+      </div>
+      <!-- End .actions -->
+    </form>
+  </section>
+  <!-- End .box.login -->
 
-	<section class="box newUser cf hide" id="registerform">
-        <header>
-            <h1>BrModelo</h1>
-        </header>
-        <h2>Criar Conta</h2>
-        <form class="cf">
+  <section class="box newUser cf hide" id="registerform">
+    <header>
+      <h1>BrModelo</h1>
+    </header>
+    <h2>Criar Conta</h2>
+    <form class="cf">
 
-            <div class="field" id="regMail"> 
-                <input
-                       type="text"
-                       placeholder="Email"
-                       name="login"
-                       tabindex="1"
-                       ng-model="user.mail"
-                       value=""
-                />
-            </div>  
+      <div class="field" id="regMail">
+        <input type="text" placeholder="Email" name="login" tabindex="1" ng-model="user.mail" value="" />
+      </div>
 
-            <div class="field" id="regPassword">
-                <input
-                       type="password"
-                       placeholder="Senha"
-                       name="password"
-                       tabindex="2"
-                       ng-model="user.password"
-                       
-                       value=""
-                />
-            </div>
+      <div class="field" id="regPassword">
+        <input type="password" placeholder="Senha" name="password" tabindex="2" ng-model="user.password" value="" />
+      </div>
 
-            <div class="field" id="regRePassword">
-                <input
-                       type="password"
-                       placeholder="Confirme senha"
-                       name="password" tabindex="2"
-                       ng-model="user.confirmation"
-                       
-                       value=""
-                    />
-            </div>  
+      <div class="field" id="regRePassword">
+        <input type="password" placeholder="Confirme senha" name="password" tabindex="2" ng-model="user.confirmation" value="" />
+      </div>
 
-            <div class="actions cf">
-                <a class="back button linkButton" ng-click="login()">Voltar</a>    
-                <button
-                        type="button"
-                        class="button"
-                        tabindex="3"
-                        ng-click="createUser(user)">Registrar</button> 
-            </div><!-- End .actions -->
-        </form>
-    </section><!-- End .box.newUser -->
+      <div class="actions cf">
+        <a class="back button linkButton" ng-click="show('login')">Voltar</a>
+        <button type="button" class="button" tabindex="3" ng-click="createUser(user)">Registrar</button>
+      </div>
+      <!-- End .actions -->
+    </form>
+  </section>
+  <!-- End .box.newUser -->
 
-    <section class="box forgotPassword hide cf" id="forgotPassword">
-        <header>
-            <h1>BrModelo</h1>
-        </header>
-        <h2>Recuperar senha</h2>
-        <form class="cf">
+  <section class="box forgotPassword hide cf" id="forgotPassword">
+    <header>
+      <h1>BrModelo</h1>
+    </header>
+    <h2>Recuperar senha</h2>
+    <form class="cf">
 
-            <div class="field cf" id="emailfield">
-                <label class="hide" for="emailfield">Email:</label>
-                <input
-                    type="text"
-                    placeholder="Email"
-                    name="login" tabindex="1"
-                    ng-model="user.mail"
-                    id="emailinput"
-                    value=""
-                />
-            </div><!-- End .field -->
+      <div class="field cf" id="emailfield3">
+        <input type="text" placeholder="Email" name="login" tabindex="1" ng-model="user.mail" id="emailinput" value="" />
+      </div>
+      <!-- End .field -->
 
-            <div class="actions cf">
-                <button 
-                    type="button"
-                    class="button"
-                    tabindex="3"
-                    ng-click="">Enviar</button>
-            </div><!-- End .actions -->
-        </form>
-    </section><!-- End .box.forgotPassword -->
+      <div class="actions cf">
+        <a class="back button linkButton" ng-click="show('login')">Voltar</a>
+        <button type="button" class="button" tabindex="3" ng-click="recovery(user)">Enviar</button>
+      </div>
+      <!-- End .actions -->
+    </form>
+  </section>
+  <!-- End .box.forgotPassword -->
 
-    <div class="forgot">
-        <a href="#">Esqueci a senha!</a>
-    </div><!-- End .forgot -->
+  <div class="forgot" id='forgotField'>
+    <a ng-click="show('password')">Esqueci a senha!</a>
+  </div>
+  <!-- End .forgot -->
 
-</section><!-- End .contentPublic -->
-
-<section class="hide">
-    <header class="publicHeader">
-        <nav>
-            <a href="#">Como Funciona</a>
-            <a href="#">Sobre</a>
-            <a href="#">Contato</a>
-        </nav>
-        <button type="button" class="button" ng-click="register()">Criar conta</button>
-    </header><!-- End .publicHeader -->
-
-    <section class="contentLogin">
-        <header>
-            <h1>brModelo</h1>
-        </header>
-
-        <div class="fieldGroup">
-            <div class="field login">
-                <input
-                    type="text"
-                    placeholder="Email"
-                    name="login" tabindex="1"
-                    ng-model="user.mail"
-                    id="emailfield"
-                    value=""
-                />
-            </div><!-- End .field -->
-            <div class="field senha">
-                <input
-                    type="password"
-                    placeholder="Senha"
-                    name="password"
-                    tabindex="2"
-                    ng-model="user.password"
-                    id="passwordfield"
-                    value=""
-                />
-            </div><!-- End .field -->
-            <div class="field acoes">
-                <button 
-                    type="button"
-                    class="button"
-                    tabindex="3"
-                    ng-click="login(user)">Entrar</button>
-            </div><!-- End .field -->
-        </div><!-- End .fieldGroup -->
-
-        <div class="control">
-            <a>Esqueceu sua senha?</a>
-        </div><!-- End .control -->
-
-    </section><!-- End .contentLogin -->
 </section>
+<!-- End .contentPublic -->
