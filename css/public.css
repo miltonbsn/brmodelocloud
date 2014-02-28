@@ -23,7 +23,7 @@
     position: relative;
     max-width: 350px;
     padding: 102px 20px 20px 20px;
-    margin: 0 auto 30px auto;
+    margin: 0 auto;
     border-radius: 4px;
 background-color: #ffffff;
 background-image: -webkit-gradient(linear, left top, left bottom, from(rgb(255, 255, 255)), to(rgb(235, 235, 235)));
