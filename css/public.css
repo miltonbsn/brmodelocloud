@@ -95,32 +95,36 @@ filter: progid:DXImageTransform.Microsoft.gradient(GradientType=0,StartColorStr=
 }
 
 .box.login h2,
-.box.newUser h2 {
+.box.newUser h2,
+.box.forgotPassword h2 {
 	font-size: 1.5em;
 }
 
-.box.newUser > form {
+.box.newUser > form,
+.box.forgotPassword form{
     margin-top: 20px;
 }
 
 .box.login .field,
-.box.newUser .field  {
+.box.newUser .field,
+.box.forgotPassword .field {
     margin-bottom: 20px;
 }
 
 .box.login .field input,
-.box.newUser .field input {
+.box.newUser .field input,
+.box.forgotPassword .field input {
     display: block;
     width: 100%;
     font-size: 1.5em;
-    border-color: rgba(0,0,0, 0.3);
 }
 
 .box.login .field input:focus,
 .box.newUser .field input:focus {border-color: rgba(0,0,0, 0.7);}
 
-.login .actions button,
-.newUser .actions button {
+.box.login .actions button,
+.box.newUser .actions button,
+.box.forgotPassword .actions button {
     float: right;
 }
 
