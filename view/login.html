@@ -3,30 +3,34 @@
 </header><!-- End .publicHeader -->
 
 <section class="contentPublic">
+<<<<<<< HEAD
     <section class="feedback hide">
         <div class="message error sd">
             <p>This is the message to explain about something that went wrong.</p>
         </div>
     </section>
     <section class="box login cf">
+=======
+    <section class="box login cf" id="loginform">
+>>>>>>> FETCH_HEAD
         <header>
             <h1>BrModelo</h1>
         </header>
         <form class="cf">
 
-            <div class="field cf">
+            <div class="field cf" id="emailfield">
                 <label class="hide" for="emailfield">Email:</label>
                 <input
                     type="text"
                     placeholder="Email"
                     name="login" tabindex="1"
                     ng-model="user.mail"
-                    id="emailfield"
+                    id="emailinput"
                     value=""
                 />
             </div><!-- End .field -->
 
-            <div class="field cf">
+            <div class="field cf" id="passwordfield">
                 <label class="hide" for="passwordfield">Senha:</label>
                 <input
                     type="password"
@@ -34,7 +38,7 @@
                     name="password"
                     tabindex="2"
                     ng-model="user.password"
-                    id="passwordfield"
+                    id="passwordinput"
                     value=""
                 />
             </div><!-- End .field -->
@@ -49,44 +53,43 @@
         </form>
     </section><!-- End .box.login -->
 
-	<section class="box newUser cf">
+	<section class="box newUser cf hide" id="registerform">
         <header>
             <h1>BrModelo</h1>
         </header>
         <h2>Criar Conta</h2>
         <form class="cf">
 
-            <div class="field"> 
+            <div class="field" id="regMail"> 
                 <input
                        type="text"
                        placeholder="Email"
                        name="login"
                        tabindex="1"
                        ng-model="user.mail"
-                       id="regMail"
                        value=""
                 />
             </div>  
 
-            <div class="field">
+            <div class="field" id="regPassword">
                 <input
                        type="password"
                        placeholder="Senha"
                        name="password"
                        tabindex="2"
                        ng-model="user.password"
-                       id="regPassword"
+                       
                        value=""
                 />
             </div>
 
-            <div class="field">
+            <div class="field" id="regRePassword">
                 <input
                        type="password"
                        placeholder="Confirme senha"
                        name="password" tabindex="2"
                        ng-model="user.confirmation"
-                       id="regRePassword"
+                       
                        value=""
                     />
             </div>  
@@ -97,7 +100,7 @@
                         type="button"
                         class="button"
                         tabindex="3"
-                        ng-click="register(user)">Registrar</button> 
+                        ng-click="createUser(user)">Registrar</button> 
             </div><!-- End .actions -->
         </form>
     </section><!-- End .box.newUser -->
